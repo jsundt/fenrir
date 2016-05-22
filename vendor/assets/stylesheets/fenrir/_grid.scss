@@ -1,0 +1,89 @@
+//Core grid
+
+.bg {
+  @include gen-bg-variants();
+}
+
+.text {
+  @include gen-color-variants();
+}
+
+
+
+
+/// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+@mixin make-container($gutter: $grid-gutter-width) {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+@mixin make-row($gutter: $grid-gutter-width) {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);
+}
+
+
+
+// Container with set widths
+.container {
+  @include make-container();
+
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint) {
+      max-width: $container-max-width;
+    }
+  }
+}
+// Fluid container
+.container-fluid {
+  @include make-container();
+}
+
+
+// Rows
+.row {
+  @include make-row();
+}
+
+// Base flex item
+.item {
+  flex-grow: 1;
+  min-height: 1px;
+}
+.big-bench,
+.big-item {
+  @extend .bench;
+  flex-grow: 2;
+}
+
+.juice,
+.grow {
+  flex-grow: 1;
+}
+.no-gains,
+.no-grow {
+  flex-grow: 0;
+}
+
+
+  // Flex column reordering
+  @include gen-reorder();
+
+  // Set direction
+  @include gen-directions();
+
+  // Horizontal align items in row
+  @include gen-justify();
+
+  // Alignment for every item in row
+  @include gen-align-items();
+
+  // Alignment for every item in row
+  @include gen-align-self();
