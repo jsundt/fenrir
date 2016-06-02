@@ -1,0 +1,108 @@
+
+// scss-lint:disable ImportantRule SpaceAfterPropertyColon
+
+
+//-----------------------------------\\
+// Useful spacing classes
+//-----------------------------------\\
+
+.margin-x-auto {
+  margin-right: auto !important;
+  margin-left:  auto !important;
+}
+
+.margin-x-0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.margin-0 {
+  margin: 0;
+}
+
+
+
+//-----------------------------------\\
+// Margin and padding generator
+//-----------------------------------\\
+
+$padding: 60 !default;
+
+$white-space: (
+  '0':    0,
+  '25':  ($padding / 4),
+  '50':  ($padding / 2),
+  '100':  $padding,
+  '200': ($padding * 2),
+) !default;
+
+$spacing-properties: (
+  'margin':  'margin',
+  'pull':    'margin',
+  'padding': 'padding'
+) !default;
+
+
+//// Generate default spacing classes
+//
+// Naming style:
+// type: margin, negative margin or padding (margin, pull, padding)
+// screensize: nothing, small-break (nothing, sm)
+// direction: top, bottom, both (t, b, y)
+// size: taken from $white-space list above (0, 1, 2, 3)
+//
+// .padding-t-1, .padding-y-1, .margin-b-2, .margin-sm-b-3, .pull-sm-t-2
+
+@each $abbrev, $prop in $spacing-properties {
+  @each $size, $length in $white-space {
+    @if $abbrev == pull {
+      $length: -$length;
+    }
+
+    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length; }
+    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length; }
+
+    .#{$abbrev}-y-#{$size} {
+      #{$prop}-top:    $length;
+      #{$prop}-bottom: $length;
+    }
+  }
+}
+
+//// For small-break and up to overwrite mobile styling
+@each $abbrev, $prop in $spacing-properties {
+  @each $size, $length in $white-space {
+    @if $abbrev == pull {
+      $length: -$length;
+    }
+
+    @include min-width($medium-break) {
+      .#{$abbrev}-sm-t-#{$size} { #{$prop}-top:    $length; }
+      .#{$abbrev}-sm-b-#{$size} { #{$prop}-bottom: $length; }
+
+      .#{$abbrev}-sm-y-#{$size} {
+        #{$prop}-top:    $length;
+        #{$prop}-bottom: $length;
+      }
+    }
+  }
+}
+
+//// For small-break and up to overwrite mobile styling
+@each $abbrev, $prop in $spacing-properties {
+  @each $size, $length in $white-space {
+    @if $abbrev == pull {
+      $length: -$length;
+    }
+
+    @include min-width($big-break) {
+      .#{$abbrev}-md-t-#{$size} { #{$prop}-top:    $length; }
+      .#{$abbrev}-md-b-#{$size} { #{$prop}-bottom: $length; }
+
+      .#{$abbrev}-md-y-#{$size} {
+        #{$prop}-top:    $length;
+        #{$prop}-bottom: $length;
+      }
+    }
+  }
+}

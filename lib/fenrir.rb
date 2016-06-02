@@ -5,7 +5,7 @@ module Fenrir
   class Engine < ::Rails::Engine
   end
 
-  class CustomGenerator < Rails::Generators::Base
+  class InitiateGenerator < Rails::Generators::Base
     source_root File.expand_path('..', __FILE__)
 
     # Copy all needed stylesheets in the asset directory of the application
