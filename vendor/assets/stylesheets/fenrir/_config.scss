@@ -1,0 +1,45 @@
+
+
+
+//-----------------------------------//
+// Enable / disable features
+// from fenrir & bootstrap
+//-----------------------------------//
+
+$enable-flex:               false !default; // bootstrap 4 flex layouts
+$enable-grid-classes:       true !default;  // bootstrap 4 grid classes
+
+$disable-body-scroll:       false !default;  // fenrir page setup
+
+
+
+//-----------------------------------//
+// Setup bootstrap grid framework
+//-----------------------------------//
+
+// Grid breakpoints
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+$grid-breakpoints: (
+  xs: 0,      // Extra small screen / phone
+  sm: 544px,  // Small screen / phone
+  md: 768px,  // Medium screen / tablet
+  lg: 992px,  // Large screen / desktop
+  xl: 1200px  // Extra large screen / wide desktop
+) !default;
+
+
+// Grid containers
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+) !default;
+
+
+// Grid columns
+// Set the number of columns and specify the width of the gutters.
+$grid-columns:               12 !default;
+$grid-gutter-width:          1.875rem !default; // 30px

@@ -19,7 +19,7 @@
 
     // Alignment per item
     @include media-breakpoint-up($breakpoint) {
-      .flex-#{$breakpoint}-top   { align-self: flex-start; }
+      .flex-#{$breakpoint}-top { align-self: flex-start; }
       .flex-#{$breakpoint}-middle { align-self: center; }
       .flex-#{$breakpoint}-bottom { align-self: flex-end; }
     }

@@ -1,10 +1,15 @@
-// defaults and browser reset
-// @import 'fenrir/defaults';
-// @import 'fenrir/reboot';
 
 
-// core grid
-@import "../bootstrap4/init";
+
+//-----------------------------------//
+// Setup css framework
+//-----------------------------------//
+
+@import 'config'; // Set defaults
+@import '../bootstrap4/init'; // Load bootstrap grid
+
+@import 'mixins/*';
+
 @import 'layout';
 
 

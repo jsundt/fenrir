@@ -1,39 +1,38 @@
 //Core grid
 
-// .bg {
-//   @include gen-bg-variants();
-// }
+@if $disable-body-scroll {
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  .page-wrapper {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+} // IF disable-body-scroll
+
+
+
+// .page {
 //
-// .text {
-//   @include gen-color-variants();
 // }
 
+// .section {
+//
+// }
 
-.page {
-
-}
-
-.section {
-
-}
-
-.slice {
-
-}
-
-
-
-// // Flex column reordering
-// @include gen-reorder();
-
-// // Set direction
-// @include gen-directions();
-
-// // Horizontal align items in row
-// @include gen-justify();
-
-// // Alignment for every item in row
-// @include gen-align-items();
-
-// // Alignment for every item in row
-// @include gen-align-self();
+// .slice {
+//
+// }
