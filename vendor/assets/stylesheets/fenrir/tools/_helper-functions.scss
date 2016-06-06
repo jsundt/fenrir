@@ -1,0 +1,46 @@
+
+
+
+//-----------------------------------\\
+// SCSS helper functions
+//-----------------------------------\\
+
+// Use font size map for font-sizes
+@function size($key, $nth) {
+  @if map-has-key($font-sizes, $key) {
+    $get-key: map-get($font-sizes, $key);
+    @return nth($get-key, $nth)
+  }
+
+  @warn "Unknown `#{$key}` in $font-sizes.";
+  @return null;
+}
+
+
+// Use z-index map for z-indexes
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}
+
+
+// Use map of colours for stuff
+@function color($color, $strength: 100) {
+  @if map-has-key($color-map, $color) {
+    $get-color: map-get($color-map, $color);
+
+    @if map-has-key($get-color, $strength) {
+      @return map-get($get-color, $strength)
+    }
+
+    @warn "Unknown `#{$strength}` in `#{$color}`.";
+    @return null;
+  }
+
+  @warn "Unknown `#{$color}` in $color-map.";
+  @return null;
+}

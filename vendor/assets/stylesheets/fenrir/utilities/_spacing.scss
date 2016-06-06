@@ -1,4 +1,3 @@
-
 // scss-lint:disable ImportantRule SpaceAfterPropertyColon
 
 
@@ -43,8 +42,8 @@ $spacing-properties: (
 ) !default;
 
 $spacing-breakpoints: (
-  'sm',
-  'md',
+  sm,
+  md,
 ) !default;
 
 
@@ -58,38 +57,36 @@ $spacing-breakpoints: (
 //
 // .padding-t-1, .padding-y-1, .margin-b-2, .margin-sm-b-3, .pull-sm-t-2
 
-@each $abbrev, $prop in $spacing-properties {
-  @each $size, $length in $white-space {
-    @if $abbrev == pull {
-      $length: -$length;
-    }
+@mixin gen-spacing-props($abbrev, $size, $prop, $length, $break: null) {
+  $class: #{$abbrev};
 
-    .#{$abbrev}-t-#{$size} { #{$prop}-top:    $length; }
-    .#{$abbrev}-b-#{$size} { #{$prop}-bottom: $length; }
+  // Check if this is part of a breakpoint and add appropriate class name
+  @if $break != null {
+    $class: #{$abbrev}-#{$break};
+  }
 
-    .#{$abbrev}-y-#{$size} {
-      #{$prop}-top:    $length;
-      #{$prop}-bottom: $length;
-    }
+  // Check if this is a pull and inverse length
+  @if $abbrev == pull {
+    $length: -$length;
+  }
+
+  // Generate class names and lengths
+  .#{$class}-t-#{$size} { #{$prop}-top:    $length; }
+  .#{$class}-b-#{$size} { #{$prop}-bottom: $length; }
+
+  .#{$class}-y-#{$size} {
+    #{$prop}-top:    $length;
+    #{$prop}-bottom: $length;
   }
 }
 
-//// For small-break and up to overwrite mobile styling
-@each $breakpoint in $spacing-breakpoints {
-  @each $abbrev, $prop in $spacing-properties {
-    @each $size, $length in $white-space {
-      @if $abbrev == pull {
-        $length: -$length;
-      }
+@each $abbrev, $prop in $spacing-properties {
+  @each $size, $length in $white-space {
+    @include gen-spacing-props($abbrev, $size, $prop, $length);
 
-      @include min-width($medium-break) {
-        .#{$abbrev}-#{$breakpoint}-t-#{$size} { #{$prop}-top:    $length; }
-        .#{$abbrev}-#{$breakpoint}-b-#{$size} { #{$prop}-bottom: $length; }
-
-        .#{$abbrev}-#{$breakpoint}-y-#{$size} {
-          #{$prop}-top:    $length;
-          #{$prop}-bottom: $length;
-        }
+    @each $break in $spacing-breakpoints {
+      @include media-breakpoint-up($break) {
+        @include gen-spacing-props($abbrev, $size, $prop, $length, $break);
       }
     }
   }

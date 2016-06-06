@@ -9,7 +9,31 @@
 $enable-flex:               false !default; // bootstrap 4 flex layouts
 $enable-grid-classes:       true !default;  // bootstrap 4 grid classes
 
-$disable-body-scroll:       false !default;  // fenrir page setup
+// fenrir page setup
+$disable-body-scroll:       false !default; // scroll .page-wrapper not body
+$load-brand-variables:      true !default;  //
+$enable-btn-variants:       true !default;  // .btn-- and .btn--on- classes
+$enable-text-colors:        true !default;  //
+$enable-background-colors:  true !default;  //
+$enable-icon-classes:       true !default;  //
+$enable-animation-classes:  true !default;  //
+
+
+
+
+//-----------------------------------//
+// Basic color variables
+//-----------------------------------//
+
+
+
+
+
+//-----------------------------------//
+// Basic typography variables
+//-----------------------------------//
+
+
 
 
 

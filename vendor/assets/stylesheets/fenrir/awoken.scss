@@ -5,13 +5,16 @@
 // Setup css framework
 //-----------------------------------//
 
-@import 'config'; // Set defaults
+@import 'config'; // Set defaults to be overridden
 @import '../bootstrap4/init'; // Load bootstrap grid
 
-@import 'mixins/*';
+@import 'mixins/generators';
 
 @import 'layout';
 
+
+// Features
+@import 'fenrir/feature/brands';
 
 // optional modules
 // @import 'fenrir/modules/plebs';
