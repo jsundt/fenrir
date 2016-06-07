@@ -27,6 +27,39 @@ body {
   background: $body-bg;
 }
 
+
+.sidebar-wrapper {
+  @include media-breakpoint-up(md) {
+    background: $sidebar-bg;
+    display: flex;
+  }
+}
+
+  .section-nav {
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      float: left;
+      width: 25%;
+    }
+  }
+
+  .section-wrap {
+    background: $body-bg;
+    min-height: 1px;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+      box-shadow: -1px 0 1px darken($sidebar-bg, 10%);
+      // box-shadow: -500px 0 0 $sidebar-bg;
+      float: left;
+      width: 75%;
+    }
+  }
+
+
+
+
 // .page {
 //
 // }
