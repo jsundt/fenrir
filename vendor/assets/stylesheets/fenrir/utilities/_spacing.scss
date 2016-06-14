@@ -5,17 +5,17 @@
 // Useful spacing classes
 //-----------------------------------\\
 
-.margin-x-auto {
+.u-margin-x-auto {
   margin-left:  auto !important;
   margin-right: auto !important;
 }
 
-.margin-x-0 {
+.u-margin-x-0 {
   margin-left: 0;
   margin-right: 0;
 }
 
-.margin-0 {
+.u-margin-0 {
   margin: 0;
 }
 
@@ -58,23 +58,18 @@ $spacing-breakpoints: (
 // .padding-t-1, .padding-y-1, .margin-b-2, .margin-sm-b-3, .pull-sm-t-2
 
 @mixin gen-spacing-props($abbrev, $size, $prop, $length, $break: null) {
+  // Create the class name depending on if it's in a breakpoint or not
   $class: #{$abbrev};
+  @if $break != null { $class: #{$abbrev}-#{$break}; }
 
-  // Check if this is part of a breakpoint and add appropriate class name
-  @if $break != null {
-    $class: #{$abbrev}-#{$break};
-  }
-
-  // Check if this is a pull and inverse length
-  @if $abbrev == pull {
-    $length: -$length;
-  }
+  // Inverse length if it's a pull
+  @if $abbrev == pull { $length: -$length; }
 
   // Generate class names and lengths
-  .#{$class}-t-#{$size} { #{$prop}-top:    $length; }
-  .#{$class}-b-#{$size} { #{$prop}-bottom: $length; }
+  .u-#{$class}-t-#{$size} { #{$prop}-top:    $length; }
+  .u-#{$class}-b-#{$size} { #{$prop}-bottom: $length; }
 
-  .#{$class}-y-#{$size} {
+  .u-#{$class}-y-#{$size} {
     #{$prop}-top:    $length;
     #{$prop}-bottom: $length;
   }
