@@ -8,7 +8,8 @@
 @import 'config'; // Set defaults to be overridden
 @import '../bootstrap4/init'; // Load bootstrap grid
 
-@import 'mixins/generators';
+@import 'mixins/color_generators';
+@import 'mixins/type_generators';
 
 @import 'layout';
 

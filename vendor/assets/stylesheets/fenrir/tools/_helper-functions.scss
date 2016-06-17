@@ -6,6 +6,16 @@
 //-----------------------------------\\
 
 // Use font size map for font-sizes
+@function font($key, $nth) {
+  @if map-has-key($font-sizes2, $key) {
+    $get-key: map-get($font-sizes2, $key);
+    @return nth($get-key, $nth)
+  }
+
+  @warn "Unknown `#{$key}` in $font-sizes2.";
+  @return null;
+}
+
 @function size($key, $nth) {
   @if map-has-key($font-sizes, $key) {
     $get-key: map-get($font-sizes, $key);

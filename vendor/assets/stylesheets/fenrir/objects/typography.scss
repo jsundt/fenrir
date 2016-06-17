@@ -9,7 +9,7 @@
 // line-height, weight, margin-bottom)
 //-----------------------------------\\
 
-$font-sizes: (
+$font-sizes2: (
   'display':  (36px, 44px, 1.2em, 400, 0),
   'headline': (30px, 36px, 1.2em, 400, 0),
   'title':    (24px, 28px, 1.2em, 400, 0),
@@ -23,19 +23,36 @@ $font-sizes: (
 
 
 $typography-colors: (
-  'primary':   color('primary'),
-  'labs':      color('secondary'),
-  'success':   color('success'),
-  'danger':    color('danger'),
-  'white':   color('white', 115),
-  'silver':  color('silver'),
+  'primary':      color('primary'),
+  'labs':         color('secondary'),
+  'success':      color('success'),
+  'danger':       color('danger'),
+  'white':        color('white', 115),
+  'silver':       color('silver'),
   'silver-weak':  color('silver', 50),
-  'charcoal': color('charcoal'),
+  'charcoal':     color('charcoal'),
   'charcoal-115': color('charcoal', 115),
+  'inherit':      inherit,
 ) !default;
+
+
+$typography-alignment: (
+  'left': 'left',
+  'center': 'center',
+  'right': 'right',
+) !default;
+
+
+$typography-families: (
+  'charlie': $charlie-font,
+  'company': $company-font,
+) !default;
+
 
 
 
 //-----------------------------------\\
 // Fenrir typography
 //-----------------------------------\\
+
+@include gen-type-hierarchy();

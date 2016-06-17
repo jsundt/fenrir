@@ -6,8 +6,14 @@
 //-----------------------------------\\
 
 .o-text {
-  //generate .text--%{color} from color-variants list
+  //generate .text--%{color} from typography-color map
   @include gen-color-variants();
+
+  //generate .text-sm--%{alignment} from typography-alignment map
+  @include gen-type-alignment();
+
+  //generate .text--%{font} from typography-families
+  @include gen-type-families();
 
   &--normal { font-weight: 400; }
   &--bold { font-weight: 700; }
