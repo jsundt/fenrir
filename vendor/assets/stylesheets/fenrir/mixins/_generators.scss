@@ -17,7 +17,7 @@
   }
 }
 
-@mixin gen-color-variants($variants: $color-variants) {
+@mixin gen-color-variants($variants: $typography-colors) {
   @each $variant in map-keys($variants) {
     $value: map-get($variants, $variant);
 

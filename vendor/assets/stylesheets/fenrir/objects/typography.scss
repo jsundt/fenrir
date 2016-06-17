@@ -1,0 +1,41 @@
+
+
+
+//-----------------------------------\\
+// Fenrir typography defaults
+//-----------------------------------\\
+// Generate font classes
+// (mobile size, regular size,
+// line-height, weight, margin-bottom)
+//-----------------------------------\\
+
+$font-sizes: (
+  'display':  (36px, 44px, 1.2em, 400, 0),
+  'headline': (30px, 36px, 1.2em, 400, 0),
+  'title':    (24px, 28px, 1.2em, 400, 0),
+  'subhead':  (20px, 24px, 1.2em, 400, 0),
+  'lead':     (18px, 20px, 1.5em, 700, 0),
+  'body':     (15px, 17px, 1.5em, 400, 0),
+  'caption':  (13px, 14px, 1em, 400, 0),
+  'label':    (13px, 14px, 1em, 700, 0),
+  'note':     (11px, 12px, 1.5em, 400, 0)
+) !default;
+
+
+$typography-colors: (
+  'primary':   color('primary'),
+  'labs':      color('secondary'),
+  'success':   color('success'),
+  'danger':    color('danger'),
+  'white':   color('white', 115),
+  'silver':  color('silver'),
+  'silver-weak':  color('silver', 50),
+  'charcoal': color('charcoal'),
+  'charcoal-115': color('charcoal', 115),
+) !default;
+
+
+
+//-----------------------------------\\
+// Fenrir typography
+//-----------------------------------\\

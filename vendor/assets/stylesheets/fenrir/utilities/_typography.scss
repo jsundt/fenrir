@@ -1,0 +1,21 @@
+
+
+
+//-----------------------------------\\
+// Fenrir type utilities
+//-----------------------------------\\
+
+.o-text {
+  //generate .text--%{color} from color-variants list
+  @include gen-color-variants();
+
+  &--normal { font-weight: 400; }
+  &--bold { font-weight: 700; }
+}
+
+
+.o-emoji {
+  //scss-lint:disable ImportantRule ColorVariable ColorKeyword
+  font-family: sans-serif !important;
+  color: black !important;
+}

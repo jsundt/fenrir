@@ -55,7 +55,7 @@ $spacing-breakpoints: (
 // direction: top, bottom, both (t, b, y)
 // size: taken from $white-space list above (0, 1, 2, 3)
 //
-// .padding-t-1, .padding-y-1, .margin-b-2, .margin-sm-b-3, .pull-sm-t-2
+// .padding-t-100, .padding-y-100, .margin-b-0, .margin-sm-b-50, .pull-sm-t-200
 
 @mixin gen-spacing-props($abbrev, $size, $prop, $length, $break: null) {
   // Create the class name depending on if it's in a breakpoint or not
