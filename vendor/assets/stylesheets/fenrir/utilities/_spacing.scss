@@ -42,6 +42,7 @@ $spacing-properties: (
 ) !default;
 
 $spacing-breakpoints: (
+  null,
   sm,
   md,
 ) !default;
@@ -75,14 +76,28 @@ $spacing-breakpoints: (
   }
 }
 
-@each $abbrev, $prop in $spacing-properties {
-  @each $size, $length in $white-space {
-    @include gen-spacing-props($abbrev, $size, $prop, $length);
-
-    @each $break in $spacing-breakpoints {
+@each $break in $spacing-breakpoints {
+  @each $abbrev, $prop in $spacing-properties {
+    @each $size, $length in $white-space {
       @include media-breakpoint-up($break) {
         @include gen-spacing-props($abbrev, $size, $prop, $length, $break);
       }
     }
   }
 }
+
+// @each $abbrev, $prop in $spacing-properties {
+//   @each $size, $length in $white-space {
+//     @include media-breakpoint-up('sm') {
+//       @include gen-spacing-props($abbrev, $size, $prop, $length, 'sm');
+//     }
+//   }
+// }
+//
+// @each $abbrev, $prop in $spacing-properties {
+//   @each $size, $length in $white-space {
+//     @include media-breakpoint-up('md') {
+//       @include gen-spacing-props($abbrev, $size, $prop, $length, 'sm');
+//     }
+//   }
+// }
