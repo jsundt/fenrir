@@ -1,0 +1,38 @@
+
+
+
+//-----------------------------------\\
+// Good old Charlie media mixins
+//-----------------------------------\\
+// Will probably be deprecated for
+// bootstrap4's more powerful ones
+
+@mixin min-width($res) {
+  @media screen and (min-width: $res) {
+    @content;
+  }
+}
+
+@mixin max-width($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+}
+
+@mixin min-height($res) {
+  @media screen and (min-height: $res) {
+    @content;
+  }
+}
+
+@mixin max-height($res) {
+  @media screen and (max-height: $res) {
+    @content;
+  }
+}
+
+@mixin min-max($res, $res2) {
+  @media screen and (min-width: $res) and (max-width: $res2) {
+    @content;
+  }
+}

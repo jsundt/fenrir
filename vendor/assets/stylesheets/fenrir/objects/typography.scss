@@ -55,4 +55,6 @@ $typography-families: (
 // Fenrir typography
 //-----------------------------------\\
 
-@include gen-type-hierarchy();
+@if $generate-type-hierarchy {
+  @include gen-type-hierarchy();
+}

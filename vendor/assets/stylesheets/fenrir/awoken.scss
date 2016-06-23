@@ -4,26 +4,30 @@
 //-----------------------------------//
 // Setup css framework
 //-----------------------------------//
-
-@import 'config'; // Set defaults to be overridden
+@import 'configs/defaults'; // Set defaults to be overridden
 @import '../bootstrap4/init'; // Load bootstrap grid
 
+
+//-----------------------------------//
+// Setup generators
+//-----------------------------------//
 @import 'mixins/color_generators';
 @import 'mixins/type_generators';
+@import 'mixins/deprecated';
 
-@import 'layout';
+
+//-----------------------------------//
+// Setup base styling
+//-----------------------------------//
+@import 'base/layout';
+@import 'base/brands';
 
 
-// Features
-@import 'fenrir/feature/brands';
-
-// optional modules
+//-----------------------------------//
+// Create basic objects
+//-----------------------------------//
 @import 'fenrir/objects/typography';
-// @import 'fenrir/modules/plebs';
-// @import 'fenrir/modules/cards';
-// @import 'fenrir/modules/navbar';
-// @import 'fenrir/modules/tabs';
 
 
-// Utilities
+// Utilities Should be loaded after your own projects css
 // @import 'utilities';
