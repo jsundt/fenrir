@@ -4,6 +4,9 @@
 // system, as well as the generated predefined classes (e.g., `.col-4-sm`).
 
 @import "variables";
+
+$input-height: 50px; // Workaround for bootstrap4 selects
+
 @import "mixins/*";
 @import "mixins2/*"; // for reboot and forms...
 
