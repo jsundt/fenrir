@@ -41,11 +41,6 @@ $spacing-properties: (
   'padding': 'padding',
 ) !default;
 
-$spacing-breakpoints: (
-  sm,
-  md,
-) !default;
-
 
 //// Generate default spacing classes
 //
@@ -60,7 +55,7 @@ $spacing-breakpoints: (
 @mixin gen-spacing-props($abbrev, $size, $prop, $length, $break: null) {
   // Create the class name depending on if it's in a breakpoint or not
   $class: #{$abbrev};
-  @if $break != null {
+  @if $break != 'xs' {
     $class: #{$abbrev}-#{$break};
   }
 
@@ -80,19 +75,10 @@ $spacing-breakpoints: (
   }
 }
 
-
-// TODO: These can probably be merged to one by with the
-// new bootstrap media breakpoints
-@each $abbrev, $prop in $spacing-properties {
-  @each $size, $length in $white-space {
-    @include gen-spacing-props($abbrev, $size, $prop, $length);
-  }
-}
-
-@each $break in $spacing-breakpoints {
-  @each $abbrev, $prop in $spacing-properties {
-    @each $size, $length in $white-space {
-      @include media-breakpoint-up($break) {
+@each $break in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($break) {
+    @each $abbrev, $prop in $spacing-properties {
+      @each $size, $length in $white-space {
         @include gen-spacing-props($abbrev, $size, $prop, $length, $break);
       }
     }
