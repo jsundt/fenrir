@@ -29,19 +29,28 @@ body {
 
 
 .sidebar-wrapper {
+  @include make-row;
+
   @include media-breakpoint-up(md) {
     background: $sidebar-bg;
-    display: flex;
   }
 }
 
   .section-nav {
     position: relative;
+    background: $sidebar-bg;
 
     @include media-breakpoint-up(md) {
       float: left;
+      width: 30%;
+    }
+
+    @include media-breakpoint-up(lg) {
       width: 25%;
-      max-width: 300px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 20%;
     }
   }
 
@@ -52,9 +61,19 @@ body {
 
     @include media-breakpoint-up(md) {
       box-shadow: -1px 0 1px darken($sidebar-bg, 10%);
-      // box-shadow: -500px 0 0 $sidebar-bg;
       float: left;
-      flex-grow: 1;
+      width: 70%;
+
+      // Make sure content always fills the screen
+      min-height: 100vh;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 75%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 80%;
     }
   }
 
