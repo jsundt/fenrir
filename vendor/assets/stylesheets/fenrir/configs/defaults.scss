@@ -6,36 +6,79 @@
 // from fenrir & bootstrap
 //-----------------------------------//
 
+// fenrir grid
 $enable-flex:               false !default; // bootstrap 4 flex layouts
 $enable-grid-classes:       true !default;  // bootstrap 4 grid classes
-
-// fenrir page setup
 $disable-body-scroll:       false !default; // scroll .page-wrapper not body
+
+// fenrir generators
+$generate-type-hierarchy:   true !default;  //
+$generate-button-variants:  true !default;  // .btn-- and .btn--on- classes
+
+// fenrir utilities
+$enable-color-utilities:    true !default;  //
+$enable-type-utilities:     true !default;  //
+$enable-display-utilities:  true !default;  //
+$enable-spacing-utilities:  true !default;  //
+
+// fenrir extras
 $load-brand-variables:      true !default;  //
-$enable-btn-variants:       true !default;  // .btn-- and .btn--on- classes
-$enable-text-colors:        true !default;  //
-$generate-type-hierarchy:   true !default;  // Generate type hierarchy .o-text-
-$enable-background-colors:  true !default;  //
-$enable-icon-classes:       true !default;  //
-$enable-animation-classes:  true !default;  //
 
+
+
+//----------------------------------------\\
+// Layout variables
+//----------------------------------------\\
+
+$br: 8px !default;     // Border-radius
+$form-height: 44px !default; // Consistent height for buttons, inputs etc.
+$padding: 60 !default; // Basic spacing used for margins/paddings/pull
+
+
+
+//----------------------------------------\\
+// Timing and animations
+//----------------------------------------\\
+
+$timing: cubic-bezier(0.25, -0.25, 0.75, 1.25) !default; //Animation timing
 
 
 
 //-----------------------------------//
-// Basic color variables
+// Default spacing and sizing classes
 //-----------------------------------//
 
+$white-space: (
+  '0':    0,
+  '25':  ($padding / 4),
+  '50':  ($padding / 2),
+  '100':  $padding,
+  '200': ($padding * 2),
+) !default;
 
+$spacing-properties: (
+  'margin':  'margin',
+  'pull':    'margin',
+  'padding': 'padding',
+) !default;
 
 
 
 //-----------------------------------//
-// Basic typography variables
+// z-indexes
 //-----------------------------------//
 
-
-
+$z-layers: (
+  'bottom':       -1,
+  'default':      1,
+  'over':         2,
+  'top':          3,
+  'dropdown':     4,
+  'overlay':      5,
+  'modal':        6,
+  'menu-overlay': 10,
+  'menu':         11,
+) !default;
 
 
 //-----------------------------------//
@@ -43,8 +86,8 @@ $enable-animation-classes:  true !default;  //
 //-----------------------------------//
 
 // Grid breakpoints
-// Define the minimum and maximum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
+// Define the minimum and maximum dimensions at which your layout will
+// change, adapting to different screen sizes, for use in media queries.
 $grid-breakpoints: (
   xs: 0,      // Extra small screen / phone
   sm: 544px,  // Small screen / phone
@@ -68,3 +111,132 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 $grid-columns:               12 !default;
 $grid-gutter-width:          1.875rem !default; // 30px
+
+
+
+//-----------------------------------//
+// Basic color variables
+//-----------------------------------//
+
+// Brand colors
+$color-primary:    hsl(200, 100, 48) !default; // HSB 200 100 96 // #00a3f5
+$color-secondary:  hsl(210, 100, 41) !default; // HSB 210 100 82 // #0069d1
+
+// Utility
+$color-success:    hsl(167, 72, 60) !default;  // HSB 167 65 89  // #50e2c3
+$color-warning:    hsl(40, 96, 54) !default;   // HSB 40 90 98   // #faaf19
+$color-danger:     hsl(13, 75, 53) !default;   // HSB 13 80 88   // #e1542d
+
+// Grayscale
+$color-white:      hsl(0, 0, 100) !default;    // HSB 0 0 100    // #fff
+  $color-offwhite: hsl(0, 0, 95) !default;     // HSB 0 0 95     // #f2f2f2
+$color-silver:     hsl(200, 22, 90) !default;  // HSB 200 5 92   // #e0e7eb
+$color-coolgray:   hsl(200, 19, 75) !default;  // HSB 200 12 80  // #b3c3cb
+$color-gray:       hsl(200, 11, 50) !default;  // HSB 200 20 55  // #71848e
+$color-charcoal:   hsl(200, 25, 24) !default;  // HSB 200 40 30  // #2e424d
+$color-black:      hsl(0, 0, 0) !default;      // HSB 0 0 0      // #000
+
+
+
+//-----------------------------------//
+// Color variants for function
+//-----------------------------------//
+
+@import 'colormap';
+
+
+
+//-----------------------------------//
+// Color variables
+//-----------------------------------//
+
+$body-bg: color('white', 115) !default;
+$sidebar-bg: color('charcoal') !default;
+
+$shadow:  color('black', 25) !default;
+$inset-shadow: inset 0 0 1px rgba(color('charcoal'), 0.15) !default;
+
+
+
+
+//-----------------------------------//
+// Background colors
+//-----------------------------------//
+
+$background-colors: (
+  'primary':      color('primary'),
+  'labs':         color('secondary'),
+  'success':      color('success'),
+  'danger':       color('danger'),
+  'white':        color('white', 115),
+  'silver':       color('silver'),
+  'silver-50':    color('silver', 50),
+  'charcoal':     color('charcoal'),
+  'charcoal-115': color('charcoal', 115),
+  'inherit':      inherit,
+) !default;
+
+
+
+//-----------------------------------\\
+// Fenrir typography defaults
+//-----------------------------------\\
+// Generate font classes
+// (mobile size, regular size,
+// line-height, weight, margin-bottom)
+//-----------------------------------\\
+
+$charlie-font: "futura-pt", sans-serif !default;
+$company-font: "chaparral-pro", serif !default;
+
+$title-font: $charlie-font !default;
+$body-font: $charlie-font !default;
+$mono-font: monospace !default;
+
+$type-hierarchy: (
+  'display':  (36px, 44px, 1.2em, 400, 0),
+  'headline': (30px, 36px, 1.2em, 400, 0),
+  'title':    (24px, 28px, 1.2em, 400, 0),
+  'subhead':  (20px, 24px, 1.2em, 400, 0),
+  'lead':     (18px, 20px, 1.5em, 700, 0),
+  'body':     (15px, 17px, 1.5em, 400, 0),
+  'caption':  (13px, 14px, 1em, 400, 0),
+  'label':    (13px, 14px, 1em, 700, 0),
+  'note':     (11px, 12px, 1.5em, 400, 0)
+) !default;
+
+
+$type-colors: (
+  'primary':      color('primary'),
+  'labs':         color('secondary'),
+  'success':      color('success'),
+  'danger':       color('danger'),
+  'white':        color('white'),
+  'silver':       color('silver'),
+  'silver-50':    color('silver', 50),
+  'coolgray':     color('coolgray'),
+  'gray':         color('gray'),
+  'charcoal':     color('charcoal'),
+  'charcoal-115': color('charcoal', 115),
+  'black':        color('black'),
+  'inherit':      inherit,
+) !default;
+
+
+$type-alignments: (
+  'left':   left,
+  'center': center,
+  'right':  right,
+) !default;
+
+
+$type-weights: (
+  'normal': 400,
+  'bold': 700,
+) !default;
+
+
+$type-families: (
+  'charlie': $charlie-font,
+  'company': $company-font,
+) !default;

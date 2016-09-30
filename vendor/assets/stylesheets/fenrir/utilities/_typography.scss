@@ -5,23 +5,21 @@
 // Fenrir type utilities
 //-----------------------------------\\
 
-.o-text {
-  //generate .text--%{color} from typography-color map
-  @include gen-color-variants();
+@if $generate-type-hierarchy {
+  .u-text {
+    //generate .u-text--%{alignment} from type-alignments map
+    @include gen-type-alignments;
 
-  //generate .text-sm--%{alignment} from typography-alignment map
-  @include gen-type-alignment();
+    //generate .u-text--%{font} from type-families
+    @include gen-type-families;
 
-  //generate .text--%{font} from typography-families
-  @include gen-type-families();
+    //generate .u-text--%{weight} from typography-families
+    @include gen-type-weights;
+  }
 
-  &--normal { font-weight: 400; }
-  &--bold { font-weight: 700; }
-}
-
-
-.o-emoji {
-  //scss-lint:disable ImportantRule ColorVariable ColorKeyword
-  font-family: sans-serif !important;
-  color: black !important;
+  .o-emoji {
+    //scss-lint:disable ImportantRule ColorVariable ColorKeyword
+    font-family: sans-serif !important;
+    color: black !important;
+  }
 }

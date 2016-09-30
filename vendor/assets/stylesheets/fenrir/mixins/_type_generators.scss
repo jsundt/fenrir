@@ -5,10 +5,10 @@
 // Typography generation
 //-----------------------------------\\
 
-@mixin gen-type-hierarchy($variants: $font-sizes2) {
+@mixin gen-type-hierarchy($variants: $type-hierarchy) {
   @each $size in map-keys($variants) {
-    .o-text-#{$size},
-    %o-text-#{$size} {
+    .o-text--#{$size},
+    %o-text--#{$size} {
       color: color('charcoal');
       font-size: font($size, 1);
       line-height: font($size, 3);
@@ -24,20 +24,26 @@
 // Typography utility helpers
 //-----------------------------------\\
 
-@mixin gen-type-alignment($variants: $typography-alignment) {
+@mixin gen-type-alignments($variants: $type-alignments) {
   @each $align in map-keys($variants) {
-    @each $breakpoint in map-keys($grid-breakpoints) {
-      &-#{$breakpoint}--#{$align} {
-        text-align: $align;
-      }
+    &--#{$align} {
+      text-align: map-get($variants, $align);
     }
   }
 }
 
-@mixin gen-type-families($variants: $typography-families) {
-  @each $font in map-keys($typography-families) {
+@mixin gen-type-families($variants: $type-families) {
+  @each $font in map-keys($variants) {
     &--#{$font} {
       font-family: map-get($variants, $font);
+    }
+  }
+}
+
+@mixin gen-type-weights($variants: $type-weights) {
+  @each $weight in map-keys($variants) {
+    &--#{$weight} {
+      font-weight: map-get($variants, $weight);
     }
   }
 }

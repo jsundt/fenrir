@@ -5,14 +5,20 @@
 // Display utility classes
 //-----------------------------------\\
 
-.u-display--block {
-  display: block !important;
-}
+@if $enable-color-utilities {
+  .u-display--block {
+    display: block !important;
+  }
 
-.u-display--inline-block {
-  display: inline-block !important;
-}
+  .u-display--inline-block {
+    display: inline-block !important;
+  }
 
-.u-display--inline {
-  display: inline !important;
+  .u-display--inline {
+    display: inline !important;
+  }
+
+  .u-display--flex {
+    display: flex !important;
+  }
 }

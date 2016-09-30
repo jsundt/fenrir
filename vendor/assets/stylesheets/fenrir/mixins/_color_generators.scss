@@ -2,9 +2,8 @@
 
 
 //-----------------------------------\\
-// SCSS generators
+// Color generators
 //-----------------------------------\\
-
 
 // Generate colour variants
 @mixin gen-bg-variants($variants: $color-variants) {
@@ -17,46 +16,12 @@
   }
 }
 
-@mixin gen-color-variants($variants: $typography-colors) {
+@mixin gen-color-variants($variants: $type-colors) {
   @each $variant in map-keys($variants) {
     $value: map-get($variants, $variant);
 
     &--#{$variant} {
       color: $value;
-    }
-  }
-}
-
-
-// Generate Button variants
-@mixin gen-buttons($variants: $buttons) {
-  @each $variant in map-keys($variants) {
-    $value: map-get($variants, $variant);
-
-    &--#{$variant} {
-      color: nth($value, 1);
-      background-color: nth($value, 2);
-      border-color: nth($value, 3);
-    }
-  }
-}
-
-@mixin gen-button-hover($variants: $button-hover-states) {
-  @each $variant in map-keys($variants) {
-    $value: map-get($variants, $variant);
-
-    &--#{$variant} {
-      &:hover,
-      &:focus,
-      &:active {
-        color: nth($value, 1);
-        background-color: nth($value, 2);
-        border-color: nth($value, 3);
-      }
-
-      &:active {
-        border-color: darken(nth($value, 3), 5%);
-      }
     }
   }
 }

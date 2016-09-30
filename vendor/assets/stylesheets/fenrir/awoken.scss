@@ -11,9 +11,7 @@
 //-----------------------------------//
 // Setup generators
 //-----------------------------------//
-@import 'mixins/color_generators';
-@import 'mixins/type_generators';
-@import 'mixins/deprecated';
+@import 'mixins/*';
 
 
 //-----------------------------------//
@@ -26,7 +24,7 @@
 //-----------------------------------//
 // Create basic objects
 //-----------------------------------//
-@import 'fenrir/objects/typography';
+@import 'objects/*';
 
 
 // Utilities Should be loaded after your own projects css

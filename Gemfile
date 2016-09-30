@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in theeleven-flex.gemspec
+# Specify your gem's dependencies in fenrir.gemspec
 gemspec

@@ -5,82 +5,35 @@
 // Useful spacing classes
 //-----------------------------------\\
 
-.u-margin-x-auto {
-  margin-left:  auto !important;
-  margin-right: auto !important;
-}
-
-.u-margin-x-0 {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-.u-margin-0 {
-  margin: 0 !important;
-}
-
-
-
-//-----------------------------------\\
-// Margin and padding generator
-//-----------------------------------\\
-
-$padding: 60 !default;
-
-$white-space: (
-  '0':    0,
-  '25':  ($padding / 4),
-  '50':  ($padding / 2),
-  '100':  $padding,
-  '200': ($padding * 2),
-) !default;
-
-$spacing-properties: (
-  'margin':  'margin',
-  'pull':    'margin',
-  'padding': 'padding',
-) !default;
-
-
-//// Generate default spacing classes
-//
-// Naming style:
-// type: margin, negative margin or padding (margin, pull, padding)
-// screensize: nothing, small-break (nothing, sm)
-// direction: top, bottom, both (t, b, y)
-// size: taken from $white-space list above (0, 50, 100, 200)
-//
-// .u-padding-y-100, .u-margin-b-0, .u-margin-sm-b-50, .u-pull-sm-t-200
-
-@mixin gen-spacing-props($abbrev, $size, $prop, $length, $break: null) {
-  // Create the class name depending on if it's in a breakpoint or not
-  $class: #{$abbrev};
-  @if $break != 'xs' {
-    $class: #{$abbrev}-#{$break};
+@if $enable-spacing-utilities {
+  .u-margin-x-auto {
+    margin-left:  auto !important;
+    margin-right: auto !important;
   }
 
-  // Inverse length if it's a pull
-  // TODO: refactor to make this set able?
-  @if $abbrev == pull {
-    $length: -$length;
+  .u-margin-x-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
-  // Generate class names and lengths
-  .u-#{$class}-t-#{$size} { #{$prop}-top:    $length; }
-  .u-#{$class}-b-#{$size} { #{$prop}-bottom: $length; }
-
-  .u-#{$class}-y-#{$size} {
-    #{$prop}-top:    $length;
-    #{$prop}-bottom: $length;
+  .u-margin-0 {
+    margin: 0 !important;
   }
-}
 
-@each $break in map-keys($grid-breakpoints) {
-  @include media-breakpoint-up($break) {
-    @each $abbrev, $prop in $spacing-properties {
-      @each $size, $length in $white-space {
-        @include gen-spacing-props($abbrev, $size, $prop, $length, $break);
+
+
+  //-----------------------------------\\
+  // Generate spacing classes
+  //-----------------------------------\\
+
+  @each $break in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($break) {
+      @each $abbrev, $prop in $spacing-properties {
+        @each $size, $length in $white-space {
+          @include gen-spacing-props($abbrev, $size, $prop, $length, $break);
+        }
       }
     }
   }
+
 }

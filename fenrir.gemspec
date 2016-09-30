@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Jørgen Sundt"]
   spec.email         = ["jorgen@theeleven.co.uk"]
 
-  spec.summary       = %q{A simple flexbox grid system for IE10+}
-  spec.description   = %q{Only for the swolest of browsers}
-  spec.homepage      = "https://github.com/jsundt/"
+  spec.summary       = %q{A bootstrap based framework used by CharlieHR}
+  spec.description   = %q{Supports modern browsers. Enables generation of colors, typography, spacing and other utility classes. Charlie ITCSS styled.}
+  spec.homepage      = "https://github.com/jsundt/fenrir"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

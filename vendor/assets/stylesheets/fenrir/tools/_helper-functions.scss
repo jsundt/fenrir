@@ -5,14 +5,13 @@
 // SCSS helper functions
 //-----------------------------------\\
 
-// Use font size map for font-sizes
 @function font($key, $nth) {
-  @if map-has-key($font-sizes2, $key) {
-    $get-key: map-get($font-sizes2, $key);
+  @if map-has-key($type-hierarchy, $key) {
+    $get-key: map-get($type-hierarchy, $key);
     @return nth($get-key, $nth)
   }
 
-  @warn "Unknown `#{$key}` in $font-sizes2.";
+  @warn "Unknown `#{$key}` in $type-hierarchy.";
   @return null;
 }
 
