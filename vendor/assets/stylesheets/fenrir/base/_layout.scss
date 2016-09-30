@@ -1,6 +1,23 @@
-//Core grid
 
-@if $disable-body-scroll {
+
+
+//----------------------------------------\\
+// Base layout styling
+//----------------------------------------\\
+
+body {
+  background: $body-bg;
+}
+
+
+
+//----------------------------------------\\
+// Layout wrapper classes
+//----------------------------------------\\
+// Using Perfect-scrollbar for scrolling!
+//----------------------------------------\\
+
+@if $enable-wrapper-classes {
   html,
   body {
     height: 100%;
@@ -10,84 +27,97 @@
     -webkit-overflow-scrolling: auto;
   }
 
-  .page-wrapper {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  .content-wrap {
+    position: relative;
+    padding-top: 60px;
     height: 100%;
     width: 100%;
-    position: relative;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-  }
-} // IF disable-body-scroll
 
-body {
-  background: $body-bg;
-}
-
-
-.sidebar-wrapper {
-  @include make-row;
-
-  @include media-breakpoint-up(md) {
-    background: $sidebar-bg;
-  }
-}
-
-  .section-nav {
-    position: relative;
-    background: $sidebar-bg;
-
-    @include media-breakpoint-up(md) {
-      float: left;
-      width: 30%;
+    @include max-width(767px) {
+      padding-bottom: 60px;
     }
 
-    @include media-breakpoint-up(lg) {
-      width: 25%;
-    }
-
-    @include media-breakpoint-up(xl) {
-      width: 20%;
+    .u-disable-menu-padding & {
+      padding-top: 0;
     }
   }
 
-  .section-wrap {
-    background: $body-bg;
-    min-height: 1px;
-    position: relative;
+    .page-wrapper {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      -webkit-overflow-scrolling: touch;
 
-    @include media-breakpoint-up(md) {
-      box-shadow: -1px 0 1px darken($sidebar-bg, 10%);
-      float: left;
-      width: 70%;
-
-      // Make sure content always fills the screen
-      min-height: 100vh;
+      .no-js & {
+        overflow: auto;
+      }
     }
 
-    @include media-breakpoint-up(lg) {
-      width: 75%;
+    .sidebar-wrapper {
+      position: relative;
+      height: 100%;
+
+      @include media-breakpoint-up(md) {
+        background: $sidebar-bg;
+      }
     }
 
-    @include media-breakpoint-up(xl) {
-      width: 80%;
-    }
-  }
+      .section-nav {
+        display: none;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        background: $sidebar-bg;
 
+        @include media-breakpoint-up(md) {
+          float: left;
+          width: 30%;
+          display: block;
+          box-shadow: 1px 0 1px 0 rgba($black, 0.5);
+        }
 
+        @include media-breakpoint-up(lg) {
+          width: 25%;
+        }
 
+        @include media-breakpoint-up(xl) {
+          width: 20%;
+        }
 
-// .page {
-//
-// }
+        .no-js & {
+          overflow: auto;
+        }
+      }
 
-// .section {
-//
-// }
+      .section-wrap {
+        background: $body-bg;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
 
-// .slice {
-//
-// }
+        @include media-breakpoint-up(md) {
+          // box-shadow: -1px 0 1px darken($sidebar-bg, 10%);
+          float: left;
+          width: 70%;
+
+          min-height: 100vh; // Make sure content always fills the screen
+        }
+
+        @include media-breakpoint-up(lg) {
+          width: 75%;
+        }
+
+        @include media-breakpoint-up(xl) {
+          width: 80%;
+        }
+
+        .no-js & {
+          overflow: auto;
+        }
+      }
+} // IF enable-wrapper-classes
