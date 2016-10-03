@@ -12,17 +12,17 @@ $enable-grid-classes:       true !default;  // bootstrap 4 grid classes
 $enable-wrapper-classes:    false !default; // disables scrolling! (add JS)
 
 // fenrir generators
-$generate-type-hierarchy:   true !default;  //
-$generate-button-variants:  true !default;  // .btn-- and .btn--on- classes
+$generate-type-hierarchy:   true !default;  // .o-text
+$generate-button-variants:  true !default;  // .btn-- /.btn--on-
 
 // fenrir utilities
-$enable-color-utilities:    true !default;  //
-$enable-type-utilities:     true !default;  //
-$enable-display-utilities:  true !default;  //
-$enable-spacing-utilities:  true !default;  //
+$enable-color-utilities:    true !default;  // .u-color /.u-bg
+$enable-type-utilities:     true !default;  // .u-text
+$enable-display-utilities:  true !default;  // .u-display
+$enable-spacing-utilities:  true !default;  // .u-margin /.u-pull /.u-padding
 
 // fenrir extras
-$load-brand-variables:      true !default;  //
+$load-brand-variables:      true !default;  // Variables for other companies
 
 
 
@@ -158,7 +158,6 @@ $inset-shadow: inset 0 0 1px rgba(color('charcoal'), 0.15) !default;
 
 
 
-
 //-----------------------------------//
 // Background colors
 //-----------------------------------//
@@ -210,6 +209,7 @@ $type-colors: (
   'primary':      color('primary'),
   'labs':         color('secondary'),
   'success':      color('success'),
+  'warning':      color('warning'),
   'danger':       color('danger'),
   'white':        color('white'),
   'silver':       color('silver'),

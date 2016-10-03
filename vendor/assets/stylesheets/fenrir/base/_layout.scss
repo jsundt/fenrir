@@ -24,7 +24,6 @@ body {
     width: 100%;
     position: relative;
     overflow: hidden;
-    -webkit-overflow-scrolling: auto;
   }
 
   .content-wrap {
@@ -33,7 +32,7 @@ body {
     height: 100%;
     width: 100%;
 
-    @include max-width(767px) {
+    @include media-breakpoint-down(md) {
       padding-bottom: 60px;
     }
 
@@ -71,6 +70,7 @@ body {
         display: none;
         height: 100%;
         overflow: hidden;
+        -webkit-overflow-scrolling: touch;
         position: relative;
         background: $sidebar-bg;
 
@@ -99,13 +99,12 @@ body {
         height: 100%;
         position: relative;
         overflow: hidden;
+        -webkit-overflow-scrolling: touch;
 
         @include media-breakpoint-up(md) {
           // box-shadow: -1px 0 1px darken($sidebar-bg, 10%);
           float: left;
           width: 70%;
-
-          min-height: 100vh; // Make sure content always fills the screen
         }
 
         @include media-breakpoint-up(lg) {
