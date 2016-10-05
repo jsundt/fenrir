@@ -32,8 +32,10 @@ body {
     height: 100%;
     width: 100%;
 
-    @include media-breakpoint-down(md) {
-      padding-bottom: 60px;
+    @include media-breakpoint-down(sm) {
+      .u-enable-mobile-tabs {
+        padding-bottom: 60px;
+      }
     }
 
     .u-disable-menu-padding & {
