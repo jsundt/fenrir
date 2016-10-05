@@ -6,7 +6,7 @@
 //-----------------------------------\\
 
 // Generate colour variants
-@mixin gen-bg-variants($variants: $color-variants) {
+@mixin gen-bg-variants($variants: $background-colors) {
   @each $variant in map-keys($variants) {
     $value: map-get($variants, $variant);
 

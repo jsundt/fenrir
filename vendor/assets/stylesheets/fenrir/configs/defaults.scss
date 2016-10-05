@@ -32,7 +32,7 @@ $load-brand-variables:      true !default;  // Variables for other companies
 
 $br: 8px !default;     // Border-radius
 $form-height: 44px !default; // Consistent height for buttons, inputs etc.
-$padding: 60 !default; // Basic spacing used for margins/paddings/pull
+$padding: 60px !default; // Basic spacing used for margins/paddings/pull
 
 
 
@@ -166,13 +166,15 @@ $background-colors: (
   'primary':      color('primary'),
   'labs':         color('secondary'),
   'success':      color('success'),
+  'success-115':  color('success'),
+  'warning':      color('warning'),
   'danger':       color('danger'),
-  'white':        color('white', 115),
+  'white':        color('white'),
+  'white-115':    color('white', 115),
   'silver':       color('silver'),
   'silver-50':    color('silver', 50),
   'charcoal':     color('charcoal'),
   'charcoal-115': color('charcoal', 115),
-  'inherit':      inherit,
 ) !default;
 
 

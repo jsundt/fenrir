@@ -5,15 +5,28 @@
 // Typography generation
 //-----------------------------------\\
 
+@mixin o-text--($size) {
+  color: inherit;
+  font-size: font($size, 1);
+  line-height: font($size, 3);
+  font-weight: font($size, 4);
+  margin-bottom: font($size, 5);
+
+  @include media-breakpoint-up(md) {
+    font-size: font($size, 2);
+  }
+}
+
+
+
+//-----------------------------------\\
+// Typography generation
+//-----------------------------------\\
+
 @mixin gen-type-hierarchy($variants: $type-hierarchy) {
   @each $size in map-keys($variants) {
-    .o-text--#{$size},
-    %o-text--#{$size} {
-      color: color('charcoal');
-      font-size: font($size, 1);
-      line-height: font($size, 3);
-      font-weight: font($size, 4);
-      margin-bottom: font($size, 5);
+    .o-text--#{$size} {
+      @include o-text--($size);
     }
   }
 }
