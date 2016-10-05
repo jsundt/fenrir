@@ -67,17 +67,15 @@ body {
     }
 
       .section-nav {
-        display: none;
-        height: 100%;
         overflow: hidden;
         -webkit-overflow-scrolling: touch;
         position: relative;
         background: $sidebar-bg;
 
         @include media-breakpoint-up(md) {
+          height: 100%;
           float: left;
           width: 30%;
-          display: block;
           box-shadow: 1px 0 1px 0 rgba($black, 0.5);
         }
 
