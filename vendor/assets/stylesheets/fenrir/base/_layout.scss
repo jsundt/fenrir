@@ -62,10 +62,6 @@ body {
     .sidebar-wrapper {
       position: relative;
       height: 100%;
-
-      @include media-breakpoint-up(md) {
-        background: $sidebar-bg;
-      }
     }
 
       .section-nav {
