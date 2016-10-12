@@ -33,7 +33,7 @@ body {
     width: 100%;
 
     @include media-breakpoint-down(sm) {
-      .u-enable-mobile-tabs {
+      .u-enable-mobile-tabs & {
         padding-bottom: 60px;
       }
     }
