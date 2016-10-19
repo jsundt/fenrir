@@ -92,7 +92,7 @@ body {
       }
 
       .section-wrap {
-        background: $body-bg;
+        background: inherit;
         height: 100%;
         position: relative;
         overflow: hidden;
