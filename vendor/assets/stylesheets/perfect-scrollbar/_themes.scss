@@ -26,3 +26,16 @@ $ps-theme-default: (
 .ps-container {
   @include ps-container($ps-theme-default);
 }
+
+.ps-theme-table {
+  @include ps-container(map-merge($ps-theme-default, (
+    rail-container-hover-opacity: 1,
+    rail-default-opacity: 1,
+    bar-bg: #f2f2f2,
+    scrollbar-y-width: 8px,
+    scrollbar-x-height: 9px,
+  )));
+
+  .ps-scrollbar-y-rail { z-index: 10; }
+  .ps-scrollbar-x-rail { z-index: 10; }
+}
