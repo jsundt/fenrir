@@ -11,7 +11,8 @@
     $value: map-get($variants, $variant);
 
     &--#{$variant} {
-      background: $value;
+      background: nth($value, 1);
+      color: nth($value, 2);
     }
   }
 }
