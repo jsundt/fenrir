@@ -16,6 +16,15 @@
         background: nth($value, 1);
         color: nth($value, 2);
       }
+
+      &--to-#{$variant} {
+        &:hover,
+        &:focus,
+        &:active {
+          background: nth($value, 1);
+          color: nth($value, 2);
+        }
+      }
     } @else {
       @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color)';
 
@@ -32,6 +41,14 @@
 
     &--#{$variant} {
       color: $value;
+    }
+
+    &--to-#{$variant} {
+      &:hover,
+      &:focus,
+      &:active {
+        color: $value;
+      }
     }
   }
 }
