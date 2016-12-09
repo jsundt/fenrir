@@ -10,9 +10,18 @@
   @each $variant in map-keys($variants) {
     $value: map-get($variants, $variant);
 
-    &--#{$variant} {
-      background: nth($value, 1);
-      color: nth($value, 2);
+    $map-existance: type-of($value);
+    @if $map-existance == 'list' {
+      &--#{$variant} {
+        background: nth($value, 1);
+        color: nth($value, 2);
+      }
+    } @else {
+      @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color)';
+
+      &--#{$variant} {
+        background: $value;
+      }
     }
   }
 }
