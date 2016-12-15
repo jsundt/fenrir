@@ -200,24 +200,26 @@ $type-sizes: (
   'heading-5': (28px, 32px),
   'heading-6': (21px, 24px),
   'body':      (16px, 18px),
-  'label':     (12px, 14px),
-  'note':      (10px, 12px),
+  // 'label':     (12px, 14px),
+  // 'note':      (10px, 12px),
+  'note':      (12px, 13px),
 ) !default;
 
 
 // (size, line-height, weight, text-transform, opacity)
 $type-variants: (
-  'display':  ('heading-3', 1.2em, 400, none, 1),
-  'headline': ('heading-4', 1.2em, 400, none, 1),
-  'title':    ('heading-5', 1.2em, 400, none, 1),
-  'subtitle': ('heading-6', 1.2em, 400, none, 1),
+  'display':  ('heading-3', 1.2em, 400, capitalize, 1),
+  'headline': ('heading-4', 1.2em, 400, capitalize, 1),
+  'title':    ('heading-5', 1.2em, 400, capitalize, 1),
+  'lead': ('heading-6', 1.2em, 400, none, 1),
+
   // 'lead':     ('body', 1.5em, 700, none, 0.85),
   'body':     ('body', 1.5em, 400, none, 0.85),
   'product':  ('body', 1em, 400, none, 1),
-  'small':    ('label', 1em, 400, none, 0.7),
-  'label':    ('label', 1em, 700, uppercase, 0.7),
+
+  'note':     ('note', 1em, 400, none, 0.7),
+  'label':    ('note', 1em, 700, uppercase, 0.7),
   'caption':  ('note', 1em, 400, uppercase, 0.7),
-  'note':     ('note', 1.5em, 400, none, 0.7),
 ) !default;
 
 
