@@ -25,3 +25,18 @@
     }
   }
 }
+
+@mixin gen-state-variants($variants: $background-colors, $states: $states, $prop: 'background') {
+  @each $variant in map-keys($variants) {
+    $colour-value: map-get($variants, $variant);
+
+    @each $state in map-keys($states) {
+      $state-value: map-get($states, $state);
+
+      &--#{$state}-#{$variant}.#{$state-value} {
+        #{$prop}: $colour-value;
+      }
+    }
+
+  }
+}
