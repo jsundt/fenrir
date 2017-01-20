@@ -7,11 +7,7 @@
 
 @if $generate-type-hierarchy {
   body {
-    color: color('charcoal');
-
-    .u-color-strength--85 { opacity: 0.85; }
-    .u-color-strength--70 { opacity: 0.7; }
-    .u-color-strength--50 { opacity: 0.5; }
+    color: $body-font-color;
   }
 
   h1,
