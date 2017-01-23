@@ -21,9 +21,10 @@
 
   color: inherit;
   line-height: type-variant($variant, 2);
-  font-weight: type-variant($variant, 3);
-  text-transform: type-variant($variant, 4);
-  opacity: type-variant($variant, 5);
+  margin-bottom: type-variant($variant, 3);
+  font-weight: type-variant($variant, 4);
+  text-transform: type-variant($variant, 5);
+  opacity: type-variant($variant, 6);
 }
 
 

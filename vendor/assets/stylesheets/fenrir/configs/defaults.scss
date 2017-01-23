@@ -221,19 +221,19 @@ $type-sizes: (
 
 // (size, line-height, weight, text-transform, opacity)
 $type-variants: (
-  'display-300':  ('heading-1', 1.2em, 400, capitalize, 1),
-  'display-200':  ('heading-2', 1.2em, 400, capitalize, 1),
-  'display':      ('heading-3', 1.2em, 400, capitalize, 1),
+  'display-300':  ('heading-1', 1.2em, 0, 400, capitalize, 1),
+  'display-200':  ('heading-2', 1.2em, 0, 400, capitalize, 1),
+  'display':      ('heading-3', 1.2em, 0, 400, capitalize, 1),
 
-  'headline':     ('heading-4', 1.2em, 400, capitalize, 1),
-  'title':        ('heading-5', 1.2em, 400, capitalize, 1),
-  'lead':         ('heading-6', 1.2em, 400, none, 1),
-  'body':         ('body', 1.5em, 400, none, 0.85),
-  'product':      ('body', 1em, 400, none, 1),
+  'headline':     ('heading-4', 1.2em, 0, 400, capitalize, 1),
+  'title':        ('heading-5', 1.2em, 0, 400, capitalize, 1),
+  'lead':         ('heading-6', 1.2em, 0, 400, none, 1),
+  'body':         ('body', 1.5em, 1em, 400, none, 0.85),
+  'product':      ('body', 1em, 0, 400, none, 1),
 
-  'note':         ('note', 1em, 400, none, 0.7),
-  'label':        ('note', 1em, 700, uppercase, 0.7),
-  'caption':      ('note', 1em, 400, uppercase, 0.7),
+  'note':         ('note', 1em, 0, 400, none, 0.7),
+  'label':        ('note', 1em, 0, 700, uppercase, 0.7),
+  'caption':      ('note', 1em, 0, 400, uppercase, 0.7),
 ) !default;
 
 
