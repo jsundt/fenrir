@@ -53,7 +53,7 @@
   }
 }
 
-@mixin gen-state-variants($variants: $background-colors, $states: $states, $prop: 'background') {
+@mixin gen-state-color-variants($variants: $type-colors, $states: $states) {
   @each $variant in map-keys($variants) {
     $colour-value: map-get($variants, $variant);
 
@@ -61,7 +61,29 @@
       $state-value: map-get($states, $state);
 
       &--#{$state}-#{$variant}.#{$state-value} {
-        #{$prop}: $colour-value;
+        color: $colour-value;
+      }
+    }
+
+  }
+}
+
+@mixin gen-state-background-variants($variants: $background-colors, $states: $states) {
+  @each $variant in map-keys($variants) {
+    $colour-value: map-get($variants, $variant);
+    $map-existance: type-of($colour-value);
+
+    @each $state in map-keys($states) {
+      $state-value: map-get($states, $state);
+
+      &--#{$state}-#{$variant}.#{$state-value} {
+        @if $map-existance == 'list' {
+          background-color: nth($colour-value, 1);
+          color: nth($colour-value, 2);
+        } @else {
+          @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color)';
+          background: $value;
+        }
       }
     }
 
