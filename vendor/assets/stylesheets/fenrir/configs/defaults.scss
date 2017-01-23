@@ -63,6 +63,17 @@ $spacing-properties: (
 ) !default;
 
 
+//-----------------------------------//
+// States
+//-----------------------------------//
+
+$states: (
+  'active':  'is-active',
+  'success': 'has-success',
+  'warning': 'has-warning',
+  'error':   'has-error',
+) !default;
+
 
 //-----------------------------------//
 // z-indexes

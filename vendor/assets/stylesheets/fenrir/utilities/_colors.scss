@@ -7,13 +7,19 @@
 
 @if $enable-color-utilities {
   .u-bg {
-    //generate .u-color--%{color} from type-colors map
+    //generate .u-bg--%{color} from background-colors map
     @include gen-bg-variants();
+
+    //generate .u-bg--%{color} from background-colors map
+    @include gen-state-variants();
   }
 
   .u-color {
-    //generate .u-color--%{color} from type-colors map
+    //generate .u-color--%{state}-%{color} from type-colors map
     @include gen-color-variants();
+
+    //generate .u-color--%{state}-%{color} from type-colors map
+    @include gen-state-variants($prop: 'color');
   }
 
   .u-color-strength--85 { opacity: 0.85; }
