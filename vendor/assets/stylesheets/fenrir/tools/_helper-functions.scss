@@ -5,27 +5,36 @@
 // SCSS helper functions
 //-----------------------------------\\
 
-@function font($key, $nth) {
-  @if map-has-key($type-hierarchy, $key) {
-    $get-key: map-get($type-hierarchy, $key);
-    @return nth($get-key, $nth)
+@function type-size($key, $nth) {
+  @if map-has-key($type-sizes, $key) {
+    $get-key: map-get($type-sizes, $key);
+    @return nth($get-key, $nth);
   }
 
-  @warn "Unknown `#{$key}` in $type-hierarchy.";
+  @warn "Unknown `#{$key}` in $type-sizes.";
   @return null;
 }
 
+@function type-variant($key, $nth) {
+  @if map-has-key($type-variants, $key) {
+    $get-key: map-get($type-variants, $key);
+    @return nth($get-key, $nth);
+  }
+
+  @warn "Unknown `#{$key}` in $type-variants.";
+  @return null;
+}
+
+// DEPRECATING old typography function
 @function size($key, $nth) {
   @if map-has-key($font-sizes, $key) {
     $get-key: map-get($font-sizes, $key);
-    @return nth($get-key, $nth)
+    @return nth($get-key, $nth);
   }
 
   @warn "Unknown `#{$key}` in $font-sizes.";
   @return null;
 }
-
-
 
 // Use white-space map for spacing
 @function spacing($key) {
@@ -37,7 +46,6 @@
   @return null;
 }
 
-
 // Use z-index map for z-indexes
 @function z($key) {
   @if map-has-key($z-layers, $key) {
@@ -48,14 +56,13 @@
   @return null;
 }
 
-
 // Use map of colours for stuff
 @function color($color, $strength: 100) {
   @if map-has-key($color-map, $color) {
     $get-color: map-get($color-map, $color);
 
     @if map-has-key($get-color, $strength) {
-      @return map-get($get-color, $strength)
+      @return map-get($get-color, $strength);
     }
 
     @warn "Unknown `#{$strength}` in `#{$color}`.";

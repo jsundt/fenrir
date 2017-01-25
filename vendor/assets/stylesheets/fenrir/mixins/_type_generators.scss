@@ -4,17 +4,27 @@
 //-----------------------------------\\
 // Typography generation
 //-----------------------------------\\
+// @include o-text-size--('heading-1');
+// @include o-text--('display');
+//-----------------------------------\\
 
-@mixin o-text--($size) {
-  color: inherit;
-  font-size: font($size, 1);
-  line-height: font($size, 3);
-  font-weight: font($size, 4);
-  margin-bottom: font($size, 5);
+@mixin o-text-size--($variant) {
+  font-size: type-size($variant, 1);
 
   @include media-breakpoint-up(md) {
-    font-size: font($size, 2);
+    font-size: type-size($variant, 2);
   }
+}
+
+@mixin o-text--($variant) {
+  @include o-text-size--(type-variant($variant, 1));
+
+  color: inherit;
+  line-height: type-variant($variant, 2);
+  margin-bottom: type-variant($variant, 3);
+  font-weight: type-variant($variant, 4);
+  text-transform: type-variant($variant, 5);
+  opacity: type-variant($variant, 6);
 }
 
 
@@ -23,7 +33,7 @@
 // Typography generation
 //-----------------------------------\\
 
-@mixin gen-type-hierarchy($variants: $type-hierarchy) {
+@mixin gen-type-hierarchy($variants: $type-variants) {
   @each $size in map-keys($variants) {
     .o-text--#{$size} {
       @include o-text--($size);

@@ -63,6 +63,17 @@ $spacing-properties: (
 ) !default;
 
 
+//-----------------------------------//
+// States
+//-----------------------------------//
+
+$states: (
+  'active':  'is-active',
+  'success': 'has-success',
+  'warning': 'has-warning',
+  'error':   'has-error',
+) !default;
+
 
 //-----------------------------------//
 // z-indexes
@@ -153,7 +164,9 @@ $color-black:      hsl(0, 0, 0) !default;      // HSB 0 0 0      // #000
 $body-bg: color('white', 115) !default;
 $sidebar-bg: color('charcoal') !default;
 
-$shadow:  color('black', 25) !default;
+$body-font-color: color('charcoal') !default;
+
+$shadow:  color('black', A25) !default;
 $inset-shadow: inset 0 0 1px rgba(color('charcoal'), 0.15) !default;
 
 
@@ -163,28 +176,24 @@ $inset-shadow: inset 0 0 1px rgba(color('charcoal'), 0.15) !default;
 //-----------------------------------//
 
 $background-colors: (
-  'primary':      color('primary'),
-  'labs':         color('secondary'),
-  'success':      color('success'),
-  'success-115':  color('success'),
-  'warning':      color('warning'),
-  'danger':       color('danger'),
-  'white':        color('white'),
-  'white-115':    color('white', 115),
-  'silver':       color('silver'),
-  'silver-50':    color('silver', 50),
-  'charcoal':     color('charcoal'),
-  'charcoal-115': color('charcoal', 115),
+  'primary':      (color('primary'), color('white')),
+  'labs':         (color('secondary'), color('white')),
+  'success':      (color('success'), color('charcoal')),
+  'success-115':  (color('success'), color('charcoal')),
+  'warning':      (color('warning'), color('charcoal')),
+  'danger':       (color('danger'), color('white')),
+  'white':        (color('white'), color('charcoal')),
+  'white-115':    (color('white', 115), color('charcoal')),
+  'silver':       (color('silver'), color('charcoal')),
+  'silver-50':    (color('silver', 50), color('charcoal')),
+  'charcoal':     (color('charcoal'), color('white')),
+  'charcoal-115': (color('charcoal', 115), color('white')),
 ) !default;
 
 
 
 //-----------------------------------\\
 // Fenrir typography defaults
-//-----------------------------------\\
-// Generate font classes
-// (mobile size, regular size,
-// line-height, weight, margin-bottom)
 //-----------------------------------\\
 
 $charlie-font: "futura-pt", sans-serif !default;
@@ -194,16 +203,35 @@ $title-font: $charlie-font !default;
 $body-font: $charlie-font !default;
 $mono-font: monospace !default;
 
-$type-hierarchy: (
-  'display':  (36px, 44px, 1.2em, 400, 0),
-  'headline': (30px, 36px, 1.2em, 400, 0),
-  'title':    (24px, 28px, 1.2em, 400, 0),
-  'subhead':  (20px, 24px, 1.2em, 400, 0),
-  'lead':     (18px, 20px, 1.5em, 700, 0),
-  'body':     (15px, 17px, 1.5em, 400, 0),
-  'caption':  (13px, 14px, 1em, 400, 0),
-  'label':    (13px, 14px, 1em, 700, 0),
-  'note':     (11px, 12px, 1.5em, 400, 0)
+
+// ( mobile, tablet+ )
+$type-sizes: (
+  'heading-1': (87px, 100px),
+  'heading-2': (65px, 75px),
+  'heading-3': (49px, 56px),
+  'heading-4': (37px, 42px),
+  'heading-5': (28px, 32px),
+  'heading-6': (21px, 24px),
+  'body':      (16px, 18px),
+  'note':      (12px, 13px),
+) !default;
+
+
+// (size, line-height, weight, text-transform, opacity)
+$type-variants: (
+  'display-300':  ('heading-1', 1.2em, 0, 400, capitalize, 1),
+  'display-200':  ('heading-2', 1.2em, 0, 400, capitalize, 1),
+  'display':      ('heading-3', 1.2em, 0, 400, capitalize, 1),
+
+  'headline':     ('heading-4', 1.2em, 0, 400, capitalize, 1),
+  'title':        ('heading-5', 1.2em, 0, 400, capitalize, 1),
+  'lead':         ('heading-6', 1.2em, 0, 400, none, 1),
+  'body':         ('body', 1.5em, 1em, 400, none, 0.85),
+  'product':      ('body', 1em, 0, 400, none, 1),
+
+  'note':         ('note', 1em, 0, 400, none, 0.7),
+  'label':        ('note', 1em, 0, 700, uppercase, 0.7),
+  'caption':      ('note', 1em, 0, 400, uppercase, 0.7),
 ) !default;
 
 

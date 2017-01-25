@@ -7,12 +7,22 @@
 
 @if $enable-color-utilities {
   .u-bg {
-    //generate .u-color--%{color} from type-colors map
+    //generate .u-bg--%{color} from background-colors map
     @include gen-bg-variants();
+
+    //generate .u-bg--%{color} from background-colors map
+    @include gen-state-background-variants();
   }
 
   .u-color {
-    //generate .u-color--%{color} from type-colors map
+    //generate .u-color--%{state}-%{color} from type-colors map
     @include gen-color-variants();
+
+    //generate .u-color--%{state}-%{color} from type-colors map
+    @include gen-state-color-variants();
   }
+
+  .u-color-strength--85 { opacity: 0.85; }
+  .u-color-strength--70 { opacity: 0.7; }
+  .u-color-strength--50 { opacity: 0.5; }
 }
