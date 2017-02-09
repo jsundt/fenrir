@@ -63,6 +63,7 @@ $spacing-properties: (
 ) !default;
 
 
+
 //-----------------------------------//
 // States
 //-----------------------------------//
@@ -73,6 +74,7 @@ $states: (
   'warning': 'has-warning',
   'error':   'has-error',
 ) !default;
+
 
 
 //-----------------------------------//
@@ -92,6 +94,7 @@ $z-layers: (
 ) !default;
 
 
+
 //-----------------------------------//
 // Setup bootstrap grid framework
 //-----------------------------------//
@@ -107,7 +110,6 @@ $grid-breakpoints: (
   xl: 1200px  // Extra large screen / wide desktop
 ) !default;
 
-
 // Grid containers
 // Define the maximum width of `.container` for different screen sizes.
 $container-max-widths: (
@@ -117,11 +119,10 @@ $container-max-widths: (
   xl: 1140px
 ) !default;
 
-
 // Grid columns
 // Set the number of columns and specify the width of the gutters.
-$grid-columns:               12 !default;
-$grid-gutter-width:          1.875rem !default; // 30px
+$grid-columns:      12 !default;
+$grid-gutter-width: 1.875rem !default; // 30px
 
 
 
@@ -203,21 +204,21 @@ $title-font: $charlie-font !default;
 $body-font: $charlie-font !default;
 $mono-font: monospace !default;
 
+$type-line-height: 1.4em !default;
 
-// ( mobile, tablet+ )
-$type-variants: (
-  'display-300':  (87px, 100px),
-  'display-200':  (65px, 75px),
-  'display':      (49px, 56px),
+// ( mobile, tablet+, line-height )
+$type-objects: (
+  'display-300': (87px, 100px),
+  'display-200': (65px, 75px),
+  'display':     (49px, 56px),
 
-  'headline':     (37px, 42px),
-  'title':        (28px, 32px),
-  'lead':         (21px, 24px),
-  'body':         (16px, 18px),
+  'headline':    (37px, 42px),
+  'title':       (28px, 32px),
+  'lead':        (21px, 24px),
+  'body':        (16px, 18px),
 
-  'note':         (12px, 13px),
+  'note':        (12px, 13px),
 ) !default;
-
 
 $type-colors: (
   'primary':      color('primary'),
@@ -236,19 +237,16 @@ $type-colors: (
   'inherit':      inherit,
 ) !default;
 
-
 $type-alignments: (
   'left':   left,
   'center': center,
   'right':  right,
 ) !default;
 
-
 $type-weights: (
   'normal': 400,
   'bold': 700,
 ) !default;
-
 
 $type-families: (
   'charlie': $charlie-font,
