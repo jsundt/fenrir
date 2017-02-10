@@ -26,7 +26,7 @@
         }
       }
     } @else {
-      @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color)';
+      // @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color)';
 
       &--#{$variant} {
         background: $value;
