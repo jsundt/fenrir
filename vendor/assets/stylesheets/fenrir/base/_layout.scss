@@ -52,7 +52,7 @@ body {
       width: 100%;
       position: relative;
       overflow: auto;
-      // -webkit-overflow-scrolling: touch;
+      -webkit-overflow-scrolling: touch;
     }
 
     .sidebar-wrapper {
@@ -62,7 +62,7 @@ body {
 
       .section-nav {
         overflow: auto;
-        // -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
         position: relative;
         background: $sidebar-bg;
 
@@ -88,7 +88,7 @@ body {
         height: 100%;
         position: relative;
         overflow: auto;
-        // -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch;
 
         @include media-breakpoint-up(md) {
           // box-shadow: -1px 0 1px darken($sidebar-bg, 10%);
