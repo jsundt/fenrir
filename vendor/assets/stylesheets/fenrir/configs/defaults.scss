@@ -11,6 +11,9 @@ $enable-flex:               false !default; // bootstrap 4 flex layouts
 $enable-grid-classes:       true !default;  // bootstrap 4 grid classes
 $enable-wrapper-classes:    false !default; // disables scrolling! (add JS)
 
+// fenrir scrollbar
+$enable-scrollbar-classes:  false !default; // disables scrolling! (add JS)
+
 // fenrir generators
 $generate-type-hierarchy:   true !default;  // .o-text
 $generate-button-variants:  true !default;  // .btn-- /.btn--on-
