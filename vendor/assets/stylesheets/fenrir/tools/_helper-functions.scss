@@ -6,12 +6,12 @@
 //-----------------------------------\\
 
 @function type-size($key, $nth) {
-  @if map-has-key($type-sizes, $key) {
-    $get-key: map-get($type-sizes, $key);
+  @if map-has-key($type-objects, $key) {
+    $get-key: map-get($type-objects, $key);
     @return nth($get-key, $nth);
   }
 
-  @warn "Unknown `#{$key}` in $type-sizes.";
+  @warn "Unknown `#{$key}` in $type-objects.";
   @return null;
 }
 
