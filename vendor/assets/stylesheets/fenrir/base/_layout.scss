@@ -23,7 +23,7 @@ body {
     height: 100%;
     width: 100%;
     position: relative;
-    overflow: auto;
+    overflow: hidden;
   }
 
   .content-wrap {
@@ -108,16 +108,11 @@ body {
 
 
 @if $enable-scrollbar-classes {
-  html,
-  body {
+  .page-wrapper,
+  .section-nav,
+  .section-wrap {
     overflow: hidden;
+
+    .no-js & { overflow: auto; }
   }
-
-    .page-wrapper,
-    .section-nav,
-    .section-wrap {
-      overflow: hidden;
-
-      .no-js & { overflow: auto; }
-    }
 }
