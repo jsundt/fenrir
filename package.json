@@ -1,9 +1,8 @@
 {
   "name": "fenrir",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A bootstrap based framework used by CharlieHR",
   "main": "index.js",
-  "scss": "index.scss",
   "scripts": {
     "test": "echo \"Error: no test specified :(\" && exit 1"
   },
@@ -18,6 +17,7 @@
     "itcss",
     "Design System"
   ],
+  "private": true,
   "author": "Jørgen Sundt",
   "license": "MIT",
   "bugs": {

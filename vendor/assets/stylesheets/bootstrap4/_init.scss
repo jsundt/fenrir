@@ -7,8 +7,18 @@
 
 $input-height: 50px; // Workaround for bootstrap4 selects
 
-@import "mixins/*";
-@import "mixins2/*"; // for reboot and forms...
+@import "mixins/breakpoints";
+@import "mixins/clearfix";
+@import "mixins/grid-framework";
+@import "mixins/grid";
+@import "mixins/pulls";
+
+@import "mixins2/border-radius"; // for reboot and forms...
+@import "mixins2/box-shadow";
+@import "mixins2/forms";
+@import "mixins2/hover";
+@import "mixins2/tabfocus";
+@import "mixins2/transition";
 
 @import "normalize";
 @import "reboot";
@@ -16,4 +26,7 @@ $input-height: 50px; // Workaround for bootstrap4 selects
 @import "grid";
 @import "forms";
 
-@import "utilities/*";
+@import "utilities/clearfix";
+@import "utilities/flex";
+@import "utilities/pulls";
+@import "utilities/visibility";
