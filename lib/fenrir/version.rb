@@ -1,3 +1,3 @@
 module Fenrir
-  VERSION = "0.1.8.4"
+  VERSION = "0.1.8.8"
 end

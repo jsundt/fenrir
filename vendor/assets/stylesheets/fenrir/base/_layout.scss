@@ -51,12 +51,8 @@ body {
       height: 100%;
       width: 100%;
       position: relative;
-      overflow: hidden;
+      overflow: auto;
       -webkit-overflow-scrolling: touch;
-
-      .no-js & {
-        overflow: auto;
-      }
     }
 
     .sidebar-wrapper {
@@ -65,7 +61,7 @@ body {
     }
 
       .section-nav {
-        overflow: hidden;
+        overflow: auto;
         -webkit-overflow-scrolling: touch;
         position: relative;
         background: $sidebar-bg;
@@ -85,17 +81,13 @@ body {
         @include media-breakpoint-up(xl) {
           width: 20%;
         }
-
-        .no-js & {
-          overflow: auto;
-        }
       }
 
       .section-wrap {
         background: inherit;
         height: 100%;
         position: relative;
-        overflow: hidden;
+        overflow: auto;
         -webkit-overflow-scrolling: touch;
 
         @include media-breakpoint-up(md) {
@@ -111,9 +103,16 @@ body {
         @include media-breakpoint-up(xl) {
           width: 80%;
         }
-
-        .no-js & {
-          overflow: auto;
-        }
       }
 } // IF enable-wrapper-classes
+
+
+@if $enable-scrollbar-classes {
+  .page-wrapper,
+  .section-nav,
+  .section-wrap {
+    overflow: hidden;
+
+    .no-js & { overflow: auto; }
+  }
+}
