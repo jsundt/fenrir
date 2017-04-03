@@ -178,6 +178,9 @@ $inset-shadow: inset 0 0 1px rgba(color('charcoal'), 0.15) !default;
 //-----------------------------------//
 // Background colors
 //-----------------------------------//
+// 1: background-color
+// 2: color
+// 3: border-color
 
 $background-colors: (
   'primary':      (color('primary'), color('white')),
