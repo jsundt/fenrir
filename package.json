@@ -1,0 +1,27 @@
+{
+  "name": "fenrir",
+  "version": "0.1.12",
+  "description": "A bootstrap based framework used by CharlieHR",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified :(\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsundt/fenrir.git"
+  },
+  "keywords": [
+    "scss",
+    "bootstrap",
+    "bemit",
+    "itcss",
+    "Design System"
+  ],
+  "private": true,
+  "author": "Jørgen Sundt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsundt/fenrir/issues"
+  },
+  "homepage": "https://github.com/jsundt/fenrir#readme"
+}

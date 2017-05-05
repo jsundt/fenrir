@@ -1,10 +1,9 @@
-# CharlieHR fenrir front-end framework
-Includes:
-– Generator to set up initial views and asset files
-– SCSS generation of colors, typography, spacing and other utility classes through a config file.
+# Fenrir front-end framework
+
+A bootstrap based framework used by CharlieHR. 
 
 
-## Installation
+## Installation Ruby
 
 Add this line to your application's Gemfile:
 
@@ -18,12 +17,28 @@ Run then the bellow to setup and generate a scss config file for your project:
   rails generate fenrir:initiate
 ```
 
+## Installation NPM
+
+```
+  npm i git+https://github.com/jsundt/fenrir.git --save-dev
+```
+
+Then add fenrir's stylesheets to your node-sass options
+```JSON
+  "scripts": {
+    "build-css": "node-sass --include-path node_modules/fenrir/vendor/assets/stylesheets/ src/ -o src/"
+  }
+```
+
+
+## Load SCSS into project
 Add the following to your application.scss
 
 ```scss
 @import 'fenrir/tools';  //At the very top, scss functions for fonts and colors
 
 @import 'base/config';   // Your project settings
+
 @import 'fenrir/awoken'; // Initiate the framework
 
 //---------------------------------//

@@ -1,0 +1,6 @@
+/bin
+/lib
+
+fenrir.gemspec
+Gemfile
+Rakefile
