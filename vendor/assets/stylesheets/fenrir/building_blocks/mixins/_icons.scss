@@ -1,0 +1,48 @@
+
+
+
+//----------------------------------------------\\
+// SVG Icons
+//----------------------------------------------\\
+// Always set a pixel value for both width and
+// height to help out good old IE.
+//----------------------------------------------\\
+
+@mixin custom-svg-icon($height: 50px, $width: 50px, $padding: 0, $fill: currentColor, $center: false, $float: false) {
+  height: $height;
+  width: $width;
+  padding: $padding;
+  fill: $fill;
+
+  @if $center == true {
+    display: block;
+    margin: 0 auto;
+
+  } @else if $float != false {
+    display: block;
+    float: $float;
+  }
+}
+
+
+
+//----------------------------------------------\\
+// SVG Icon default mixins
+//----------------------------------------------\\
+
+@mixin svg-small-illustration {
+  @include custom-svg-icon($height: 80px, $width: 120px);
+}
+
+@mixin svg-icon {
+  @include custom-svg-icon;
+}
+
+@mixin svg-app-icon {
+  @include custom-svg-icon($padding: 11px);
+}
+
+@mixin svg-center {
+  display: block;
+  margin: 0 auto;
+}

@@ -18,6 +18,10 @@ $enable-scrollbar-classes:  false !default; // disables scrolling! (add JS)
 $generate-type-hierarchy:   true !default;  // .o-text
 $generate-button-variants:  true !default;  // .btn-- /.btn--on-
 
+// fenrir building_blocks
+$generate-wrappers:         true !default;  // .w-
+$generate-objects:          true !default;  // .o-
+
 // fenrir utilities
 $enable-color-utilities:    true !default;  // .u-color /.u-bg
 $enable-type-utilities:     true !default;  // .u-text

@@ -1,0 +1,18 @@
+
+
+
+//----------------------------------------------\\
+// Default wrapper classes
+//----------------------------------------------\\
+
+.w-slice {
+  @include w-slice;
+}
+
+.w-card {
+  @include w-card;
+}
+
+.w-btn {
+  @include w-btn;
+}

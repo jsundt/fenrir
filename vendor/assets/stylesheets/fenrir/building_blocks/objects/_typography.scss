@@ -1,0 +1,87 @@
+
+
+
+//-----------------------------------\\
+// Fenrir typography object
+//-----------------------------------\\
+
+@if $generate-type-hierarchy {
+  body {
+    color: $body-font-color; // Set default inheritable color
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+    line-height: $type-line-height;
+    font-weight: 400;
+    font-kerning: normal;
+    font-style: normal;
+    font-family: $charlie-font;
+  }
+
+
+
+  //------------------------------------------\\
+  // Typography components default classes
+  //------------------------------------------\\
+
+  h1,
+  .o-text--display {
+    @include o-text--display;
+  }
+
+    .o-text--display-200 {
+      @include o-text--display-200;
+    }
+
+    .o-text--display-300 {
+      @include o-text--display-300;
+    }
+
+  h2,
+  .o-text--headline {
+    @include o-text--headline;
+  }
+
+  h3,
+  .o-text--title {
+    @include o-text--title;
+  }
+
+  h4,
+  .o-text--lead {
+    @include o-text--lead;
+  }
+
+  body,
+  p,
+  .o-text--body {
+    @include o-text--body;
+  }
+
+    .o-text--product {
+      @include o-text--product;
+    }
+
+  .o-text--note {
+    @include o-text--note;
+  }
+
+    h5,
+    .o-text--label {
+      @include o-text--label;
+    }
+
+    h6,
+    .o-text--caption {
+      @include o-text--caption;
+    }
+
+}

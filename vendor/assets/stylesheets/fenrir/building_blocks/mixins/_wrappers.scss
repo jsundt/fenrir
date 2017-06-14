@@ -1,0 +1,126 @@
+
+
+
+//----------------------------------------------\\
+// Charlie slice wrapper
+//----------------------------------------------\\
+
+@mixin w-slice() {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  &--no-wrap {
+    flex-wrap: nowrap;
+  }
+
+  &--no-padding {
+    padding: 0;
+  }
+}
+
+
+
+//----------------------------------------------\\
+// Charlie card wrapper
+//----------------------------------------------\\
+
+@mixin w-card() {
+  position: relative;
+  width: 100%;
+  border-radius: $br;
+  margin: 15px 0;
+  box-shadow: 0 0 0 1px color('black', A5);
+
+  transition: background-color 0.2s,
+              color 0.2s;
+
+  > :first-child {
+    border-top-left-radius: $br;
+    border-top-right-radius: $br;
+
+    &.w-slice {
+      > :first-child { border-top-left-radius: $br; }
+      > :last-child { border-top-right-radius: $br; }
+    }
+  }
+
+  > :last-child {
+    border-bottom-left-radius: $br;
+    border-bottom-right-radius: $br;
+
+    &.w-slice {
+      > :first-child { border-bottom-left-radius: $br; }
+      > :last-child { border-bottom-right-radius: $br; }
+    }
+  }
+}
+
+
+
+//----------------------------------------------\\
+// Charlie button wrapper
+//----------------------------------------------\\
+
+@mixin w-btn() {
+  // Reset button
+  background: transparent;
+  border: 0;
+  display: inline-block;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  vertical-align: top; // make sure <button> renders inline with <a>
+  text-decoration: none;
+  text-align: left;
+  color: inherit;
+
+  // Set defaults
+  position: relative;
+  border-radius: $br-50;
+  border: 1px solid transparent;
+  border-bottom-width: 3px;
+
+  transition: background-color 0.2s,
+              border-color 0.2s,
+              color 0.2s;
+
+  > :first-child {
+    border-top-left-radius: $br-50;
+    border-top-right-radius: $br-50;
+
+    &.w-slice {
+      > :first-child { border-top-left-radius: $br-50; }
+      > :last-child { border-top-right-radius: $br-50; }
+    }
+  }
+
+  > :last-child {
+    border-bottom-left-radius: $br-50;
+    border-bottom-right-radius: $br-50;
+
+    &.w-slice {
+      > :first-child { border-bottom-left-radius: $br-50; }
+      > :last-child { border-bottom-right-radius: $br-50; }
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+
+    transition: background-color 0.15s,
+                border-color 0.15s,
+                color 0.1s;
+  }
+
+  &:active {
+    background-color: color('black', A5);
+  }
+}
