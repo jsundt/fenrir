@@ -80,7 +80,7 @@
 
   // Set defaults
   position: relative;
-  border-radius: $br-50;
+  border-radius: $br;
   border: 1px solid transparent;
   border-bottom-width: 3px;
 
@@ -89,22 +89,22 @@
               color 0.2s;
 
   > :first-child {
-    border-top-left-radius: $br-50;
-    border-top-right-radius: $br-50;
+    border-top-left-radius: $br;
+    border-top-right-radius: $br;
 
     &.w-slice {
-      > :first-child { border-top-left-radius: $br-50; }
-      > :last-child { border-top-right-radius: $br-50; }
+      > :first-child { border-top-left-radius: $br; }
+      > :last-child { border-top-right-radius: $br; }
     }
   }
 
   > :last-child {
-    border-bottom-left-radius: $br-50;
-    border-bottom-right-radius: $br-50;
+    border-bottom-left-radius: $br;
+    border-bottom-right-radius: $br;
 
     &.w-slice {
-      > :first-child { border-bottom-left-radius: $br-50; }
-      > :last-child { border-bottom-right-radius: $br-50; }
+      > :first-child { border-bottom-left-radius: $br; }
+      > :last-child { border-bottom-right-radius: $br; }
     }
   }
 
