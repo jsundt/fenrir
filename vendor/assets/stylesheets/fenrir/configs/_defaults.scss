@@ -183,18 +183,20 @@ $inset-shadow: inset 0 0 1px rgba(color('charcoal'), 0.15) !default;
 // 3: border-color
 
 $background-colors: (
-  'primary':      (color('primary'), color('white')),
-  'labs':         (color('secondary'), color('white')),
-  'success':      (color('success'), color('charcoal')),
-  'success-115':  (color('success'), color('charcoal')),
-  'warning':      (color('warning'), color('charcoal')),
-  'danger':       (color('danger'), color('white')),
-  'white':        (color('white'), color('charcoal')),
-  'white-115':    (color('white', 115), color('charcoal')),
-  'silver':       (color('silver'), color('charcoal')),
-  'silver-50':    (color('silver', 50), color('charcoal')),
-  'charcoal':     (color('charcoal'), color('white')),
-  'charcoal-115': (color('charcoal', 115), color('white')),
+  'transparent':  (transparent, inherit, transparent),
+  'link':         (transparent, color('primary'), transparent),
+  'primary':      (color('primary'), color('white'), color('primary', 115)),
+  'labs':         (color('secondary'), color('white'), color('secondary', 115)),
+  'success':      (color('success'), color('charcoal'), color('success', 130)),
+  'success-115':  (color('success', 115), color('charcoal'), color('success', 150)),
+  'warning':      (color('warning'), color('charcoal'), color('warning', 115)),
+  'danger':       (color('danger'), color('white'), color('danger', 115)),
+  'white':        (color('white'), color('charcoal'), color('white', 115)),
+  'white-115':    (color('white', 115), color('charcoal'), color('silver')),
+  'silver':       (color('silver'), color('charcoal'), color('silver', 115)),
+  'silver-50':    (color('silver', 50), color('charcoal'), color('silver', 70)),
+  'charcoal':     (color('charcoal'), color('white'), color('charcoal', 115)),
+  'charcoal-115': (color('charcoal', 115), color('white'), color('charcoal', 130)),
 ) !default;
 
 
