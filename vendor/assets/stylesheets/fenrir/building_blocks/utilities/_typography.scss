@@ -5,7 +5,7 @@
 // Fenrir type utilities
 //-----------------------------------\\
 
-@if $generate-type-hierarchy {
+@if $enable-type-utilities {
   .u-text {
     //generate .u-text--%{alignment} from type-alignments map
     @include gen-type-alignments;

@@ -5,14 +5,16 @@
 // Default wrapper classes
 //----------------------------------------------\\
 
-.w-slice {
-  @include w-slice;
-}
+@if $generate-wrappers {
+  .w-slice {
+    @include w-slice;
+  }
 
-.w-card {
-  @include w-card;
-}
+  .w-card {
+    @include w-card;
+  }
 
-.w-btn {
-  @include w-btn;
+  .w-btn {
+    @include w-btn;
+  }
 }

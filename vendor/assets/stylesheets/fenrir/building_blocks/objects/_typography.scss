@@ -5,7 +5,7 @@
 // Fenrir typography object
 //-----------------------------------\\
 
-@if $generate-type-hierarchy {
+@if $generate-object-typography {
   body {
     color: $body-font-color; // Set default inheritable color
   }
