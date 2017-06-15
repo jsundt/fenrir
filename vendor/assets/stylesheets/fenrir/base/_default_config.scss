@@ -7,25 +7,28 @@
 //-----------------------------------//
 
 // fenrir grid
-$enable-flex:               false !default; // bootstrap 4 flex layouts
-$enable-grid-classes:       true !default;  // bootstrap 4 grid classes
-$enable-wrapper-classes:    false !default; // disables scrolling! (add JS)
+$enable-flex:                 false !default; // bootstrap 4 flex layouts
+$enable-grid-classes:         true !default;  // bootstrap 4 grid classes
+$enable-wrapper-classes:      false !default; // disables scrolling! (add JS)
 
 // fenrir scrollbar
-$enable-scrollbar-classes:  false !default; // disables scrolling! (add JS)
+$enable-scrollbar-classes:    false !default; // disables scrolling! (add JS)
 
 // fenrir generators
-$generate-type-hierarchy:   true !default;  // .o-text
-$generate-button-variants:  true !default;  // .btn-- /.btn--on-
+$generate-button-variants:    true !default;  // .btn-- /.btn--on-
+
+// fenrir building_blocks
+$generate-wrappers:           true !default;  // .w-
+$generate-object-typography:  true !default;  // .o-text--
 
 // fenrir utilities
-$enable-color-utilities:    true !default;  // .u-color /.u-bg
-$enable-type-utilities:     true !default;  // .u-text
-$enable-display-utilities:  true !default;  // .u-display
-$enable-spacing-utilities:  true !default;  // .u-margin /.u-pull /.u-padding
+$enable-color-utilities:      true !default;  // .u-color /.u-bg
+$enable-type-utilities:       true !default;  // .u-text
+$enable-display-utilities:    true !default;  // .u-display
+$enable-spacing-utilities:    true !default;  // .u-margin /.u-pull /.u-padding
 
 // fenrir extras
-$load-brand-variables:      true !default;  // Variables for other companies
+$load-brand-variables:        true !default;  // Variables for other companies
 
 
 

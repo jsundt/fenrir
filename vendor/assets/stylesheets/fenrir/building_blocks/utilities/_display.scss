@@ -5,7 +5,7 @@
 // Display utility classes
 //-----------------------------------\\
 
-@if $enable-color-utilities {
+@if $enable-display-utilities {
   .u-display--block {
     display: block !important;
   }

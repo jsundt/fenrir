@@ -4,20 +4,15 @@
 //-----------------------------------//
 // Setup css framework
 //-----------------------------------//
-@import 'configs'; // Set defaults to be overridden
-
-@import '../bootstrap4/init'; // Load bootstrap grid
-@import '../perfect-scrollbar/init'; // Load bootstrap grid
+@import 'base/default_config'; // Set defaults to be overridden
+@import 'mixins';
 
 
 //-----------------------------------//
-// Setup generators
+// Import styling for vendor
 //-----------------------------------//
-@import 'mixins/btn_generators';
-@import 'mixins/color_generators';
-@import 'mixins/deprecated';
-@import 'mixins/spacing_generators';
-@import 'mixins/type_generators';
+@import '../bootstrap4/init'; // Load bootstrap grid and helpers
+@import '../perfect-scrollbar/init';
 
 
 //-----------------------------------//
@@ -28,10 +23,17 @@
 
 
 //-----------------------------------//
-// Create basic objects
+// Setup building blocks
 //-----------------------------------//
-@import 'objects/typography';
+// Grid
+// Currently using Bootstrap 4 alpha
 
+// Wrappers
+@import 'building_blocks/wrappers';
 
-// Utilities Should be loaded after your own projects css
+// Objects
+@import 'building_blocks/objects/typography';
+
+// Utilities
+// Should be loaded after your own projects css
 // @import 'utilities';

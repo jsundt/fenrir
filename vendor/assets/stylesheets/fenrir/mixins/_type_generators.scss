@@ -22,15 +22,60 @@
 
 
 //-----------------------------------\\
-// Typography generation
+// Typography objects
 //-----------------------------------\\
 
-@mixin gen-type-hierarchy($variants: $type-objects) {
-  @each $size in map-keys($variants) {
-    .o-text--#{$size} {
-      @include o-text--($size);
-    }
-  }
+@mixin o-text--display {
+  @include o-text--('display');
+}
+
+@mixin o-text--display-200 {
+  @include o-text--('display-200');
+}
+
+@mixin o-text--display-300 {
+  @include o-text--('display-300');
+}
+
+@mixin o-text--headline {
+  @include o-text--('headline');
+}
+
+@mixin o-text--title {
+  @include o-text--('title');
+}
+
+@mixin o-text--lead {
+  @include o-text--('lead');
+}
+
+@mixin o-text--body {
+  @include o-text--('body');
+  opacity: 0.85;
+  margin-bottom: 1em;
+}
+
+@mixin o-text--product {
+  @include o-text--('body');
+}
+
+@mixin o-text--note {
+  @include o-text--('note');
+  opacity: 0.7;
+}
+
+@mixin o-text--label {
+  @include o-text--('note');
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+@mixin o-text--caption {
+  @include o-text--('note');
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.7;
 }
 
 

@@ -86,15 +86,15 @@
         @if $map-existance == 'list' {
           @if length($colour-value) < 3 {
             @warn "$background-colors is using deprecated definition. Missing third option: border-color";
-            $border-fallback: nth($value, 1);
+            $border-fallback: nth($colour-value, 1);
             $colour-value: append($colour-value, $border-fallback, 'comma');
           };
           background-color: nth($colour-value, 1);
           color: nth($colour-value, 2);
           border-color: nth($colour-value, 3);
         } @else {
-          @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color)';
-          background: $value;
+          @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color, border-color)';
+          background: $colour-value;
         }
       }
     }

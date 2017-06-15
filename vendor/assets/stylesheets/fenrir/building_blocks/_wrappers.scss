@@ -1,0 +1,20 @@
+
+
+
+//----------------------------------------------\\
+// Default wrapper classes
+//----------------------------------------------\\
+
+@if $generate-wrappers {
+  .w-slice {
+    @include w-slice;
+  }
+
+  .w-card {
+    @include w-card;
+  }
+
+  .w-btn {
+    @include w-btn;
+  }
+}
