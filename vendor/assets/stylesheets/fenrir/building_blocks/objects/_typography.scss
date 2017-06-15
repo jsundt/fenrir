@@ -7,7 +7,6 @@
 
 @if $generate-object-typography {
   body {
-    @include o-text--('body');
     color: $body-font-color; // Set default inheritable color
   }
 
