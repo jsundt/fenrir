@@ -28,6 +28,7 @@ $enable-color-utilities:      true !default;  // .u-color /.u-bg
 $enable-type-utilities:       true !default;  // .u-text
 $enable-display-utilities:    true !default;  // .u-display
 $enable-spacing-utilities:    true !default;  // .u-margin /.u-pull /.u-padding
+$enable-size-utilities:       true !default;  // .u-size--
 
 // fenrir extras
 $load-brand-variables:        true !default;  // Variables for other companies
@@ -62,6 +63,17 @@ $white-space: (
   '50':  ($padding / 2),
   '100':  $padding,
   '200': ($padding * 2),
+) !default;
+
+$sizes: (
+  'auto': auto,
+  '0':    0,
+  '25':  ($padding / 4),
+  '50':  ($padding / 2),
+  '100':  $padding,
+  '150': ($padding * 1.5),
+  '200': ($padding * 2),
+  '300': ($padding * 3),
 ) !default;
 
 $spacing-properties: (
