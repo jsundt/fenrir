@@ -1,0 +1,61 @@
+
+
+
+//----------------------------------------------\\
+// Object mixins: Tooltips
+//----------------------------------------------\\
+
+@mixin o-tooltip {
+  @include o-text--caption;
+  @include bg-color('charcoal-130');
+
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translate3d(-50%, 5px, 0);
+  width: auto;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0 15px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: $br;
+  z-index: -1;
+  opacity: 0;
+  margin: 0;
+  pointer-events: none;
+
+  transition: transform 0.2s $timing,
+              opacity 0.2s;
+
+  &::before {
+    content: '';
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 6px solid color('charcoal', 130);
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -6px;
+  }
+}
+
+@mixin o-tooltip--hover {
+  transform: translate3d(-50%, 0, 0);
+  opacity: 1;
+  z-index: 6;
+
+  transition: transform 0.1s $timing, opacity 0.2s;
+}
+
+@mixin o-tooltip--top {
+  bottom: auto;
+  top: -35px;
+
+  &::before {
+    border-bottom: 0;
+    border-top: 6px solid color('charcoal', 130);
+    top: auto;
+    bottom: -6px;
+  }
+}

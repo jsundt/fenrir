@@ -5,38 +5,38 @@
 // Color generators
 //-----------------------------------\\
 
+@mixin bg-color($variant, $variants: $background-colors) {
+  $value: map-get($variants, $variant);
+
+  $map-existance: type-of($value);
+  @if $map-existance == 'list' {
+    @if length($value) < 3 {
+      @warn "$background-colors is using deprecated definition. Missing third option: border-color";
+      $border-fallback: nth($value, 1);
+      $value: append($value, $border-fallback, 'comma');
+    };
+
+    background: nth($value, 1);
+    color: nth($value, 2);
+    border-color: nth($value, 3);
+  } @else {
+    @warn 'Using deprecated variable definition. $background-colors should have values of lists (background-color, color, border-color)';
+    background: $value;
+  }
+}
+
 // Generate colour variants
 @mixin gen-bg-variants($variants: $background-colors) {
   @each $variant in map-keys($variants) {
-    $value: map-get($variants, $variant);
+    &--#{$variant} {
+      @include bg-color($variant);
+    }
 
-    $map-existance: type-of($value);
-    @if $map-existance == 'list' {
-      @if length($value) < 3 {
-        @warn "$background-colors is using deprecated definition. Missing third option: border-color";
-        $border-fallback: nth($value, 1);
-        $value: append($value, $border-fallback, 'comma');
-      };
-
-      &--#{$variant} {
-        background: nth($value, 1);
-        color: nth($value, 2);
-        border-color: nth($value, 3);
-      }
-
-      &--to-#{$variant} {
-        &:hover,
-        &:focus,
-        &:active {
-          background: nth($value, 1);
-          color: nth($value, 2);
-          border-color: nth($value, 3);
-        }
-      }
-    } @else {
-      // @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color)';
-      &--#{$variant} {
-        background: $value;
+    &--to-#{$variant} {
+      &:hover,
+      &:focus,
+      &:active {
+        @include bg-color($variant);
       }
     }
   }
