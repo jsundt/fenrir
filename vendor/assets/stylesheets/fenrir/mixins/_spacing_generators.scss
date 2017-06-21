@@ -14,9 +14,9 @@
 
 @mixin gen-spacing-props($abbrev, $size, $prop, $length, $break: null) {
   // Create the class name depending on if it's in a breakpoint or not
-  $class: #{$abbrev}-;
+  $class: '#{$abbrev}-';
   @if $break != 'xs' {
-    $class: #{$abbrev}-#{$break};
+    $class: '#{$abbrev}--#{$break}';
   }
 
   // Inverse length if it's a pull
