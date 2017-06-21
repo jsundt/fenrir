@@ -10,11 +10,11 @@
 // direction: top, bottom, both (t, b, y)
 // size: taken from $white-space (0, 50, 100, 200)
 //-----------------------------------\\
-// .u-padding-y-100, .u-margin-b-0, .u-margin-sm-b-50, .u-pull-sm-t-200
+// .u-padding--y-100, .u-margin--b-0, .u-margin--sm-b-50, .u-pull--sm-t-200
 
 @mixin gen-spacing-props($abbrev, $size, $prop, $length, $break: null) {
   // Create the class name depending on if it's in a breakpoint or not
-  $class: #{$abbrev};
+  $class: #{$abbrev}-;
   @if $break != 'xs' {
     $class: #{$abbrev}-#{$break};
   }

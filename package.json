@@ -1,6 +1,6 @@
 {
   "name": "fenrir",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "description": "A bootstrap based framework used by CharlieHR",
   "main": "index.js",
   "scripts": {
