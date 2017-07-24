@@ -17,4 +17,8 @@
   .w-btn {
     @include w-btn;
   }
+
+  .w-input {
+    @include w-input;
+  }
 }
