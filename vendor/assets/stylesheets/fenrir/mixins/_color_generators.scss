@@ -60,6 +60,24 @@
   }
 }
 
+@mixin gen-border-color-variants($variants: $border-colors) {
+  @each $variant in map-keys($variants) {
+    $value: map-get($variants, $variant);
+
+    &--#{$variant} {
+      border-color: $value;
+    }
+
+    &--to-#{$variant} {
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: $value;
+      }
+    }
+  }
+}
+
 @mixin gen-state-color-variants($variants: $type-colors, $states: $states) {
   @each $variant in map-keys($variants) {
     $colour-value: map-get($variants, $variant);

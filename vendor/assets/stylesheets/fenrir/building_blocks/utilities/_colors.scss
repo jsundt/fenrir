@@ -15,11 +15,18 @@
   }
 
   .u-color {
-    //generate .u-color--%{state}-%{color} from type-colors map
+    //generate .u-color--%{color} from type-colors map
     @include gen-color-variants();
 
     //generate .u-color--%{state}-%{color} from type-colors map
     @include gen-state-color-variants();
+  }
+
+  .u-border-color {
+    //generate .u-border-color--%{color} from border-colors map
+    //generate .u-border-color--to-%{color} from border-colors map
+
+    @include gen-border-color-variants();
   }
 
   .u-opacity--100 { opacity: 1; }
