@@ -19,6 +19,8 @@ $generate-button-variants:    true !default;  // .btn-- /.btn--on-
 
 // fenrir building_blocks
 $generate-wrappers:           true !default;  // .w-
+$generate-object-icon:        true !default;  // .o-icon--
+$generate-object-tooltips:    true !default;  // .o-tooltip--
 $generate-object-typography:  true !default;  // .o-text--
 
 // fenrir utilities
@@ -26,6 +28,7 @@ $enable-color-utilities:      true !default;  // .u-color /.u-bg
 $enable-type-utilities:       true !default;  // .u-text
 $enable-display-utilities:    true !default;  // .u-display
 $enable-spacing-utilities:    true !default;  // .u-margin /.u-pull /.u-padding
+$enable-size-utilities:       true !default;  // .u-size--
 
 // fenrir extras
 $load-brand-variables:        true !default;  // Variables for other companies
@@ -60,6 +63,18 @@ $white-space: (
   '50':  ($padding / 2),
   '100':  $padding,
   '200': ($padding * 2),
+) !default;
+
+$component-sizes: (
+  'auto': auto,
+  '0':    0,
+  '25':  ($padding * 0.25),
+  '50':  ($padding * 0.5),
+  '75':  ($padding * 0.75),
+  '100':  $padding,
+  '150': ($padding * 1.5),
+  '200': ($padding * 2),
+  '300': ($padding * 3),
 ) !default;
 
 $spacing-properties: (
@@ -191,15 +206,19 @@ $background-colors: (
   'primary':      (color('primary'), color('white'), color('primary', 115)),
   'labs':         (color('secondary'), color('white'), color('secondary', 115)),
   'success':      (color('success'), color('charcoal'), color('success', 130)),
-  'success-115':  (color('success', 115), color('charcoal'), color('success', 150)),
+  'beta':         (color('warning'), color('charcoal'), color('warning', 115)),
   'warning':      (color('warning'), color('charcoal'), color('warning', 115)),
-  'danger':       (color('danger'), color('white'), color('danger', 115)),
+  'danger':       (color('danger'), color('white'), color('danger', 130)),
   'white':        (color('white'), color('charcoal'), color('white', 115)),
-  'white-115':    (color('white', 115), color('charcoal'), color('silver')),
-  'silver':       (color('silver'), color('charcoal'), color('silver', 115)),
-  'silver-50':    (color('silver', 50), color('charcoal'), color('silver', 70)),
+  'white-115':    (color('white', 115), color('gray'), color('silver')),
+  'silver':       (color('silver'), color('gray'), color('silver', 115)),
+  'silver-70':    (color('silver', 70), color('charcoal'), color('silver')),
+  'coolgray':     (color('coolgray'), color('charcoal'), color('coolgray', 115)),
+  'gray':         (color('gray'), color('charcoal'), color('gray', 115)),
   'charcoal':     (color('charcoal'), color('white'), color('charcoal', 115)),
   'charcoal-115': (color('charcoal', 115), color('white'), color('charcoal', 130)),
+  'charcoal-130': (color('charcoal', 130), color('white'), color('charcoal', 150)),
+  'charcoal-150': (color('charcoal', 150), color('white'), color('charcoal', 150)),
 ) !default;
 
 

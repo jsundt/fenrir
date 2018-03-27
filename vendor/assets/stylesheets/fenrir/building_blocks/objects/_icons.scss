@@ -1,0 +1,49 @@
+
+
+
+//-----------------------------------\\
+// Object: Icons
+//-----------------------------------\\
+// Use svg mixins to ensure all required
+// properties are set. default:
+//----------------------------------------------\\
+// custom-svg-icon($height: 50px, $width: 50px,
+// $padding: 0, $fill: currentColor,
+// $center: false, $float: false)
+//----------------------------------------------\\
+
+@if $generate-object-icon {
+  .o-icon {
+    @include svg-icon;
+
+    // Variants -> Sizing
+    &--xs { height: 20px; width: 20px; }
+    &--sm { height: 30px; width: 30px; }
+    // &--md { height: 50px; width: 50px; }
+    &--lg { height: 80px; width: 80px; }
+    &--xl { height: 100px; width: 100px; }
+    &--logo { height: 190px; width: 140px; }
+
+    // Variants -> Positioning
+    &--center { @include svg-center(); }
+    &--float-left { float: left; }
+    &--float-right { float: right; }
+
+    // Variants -> Rotation
+    &--90 { transform: rotate(90deg); }
+    &--180 { transform: rotate(180deg); }
+    &--270 { transform: rotate(270deg); }
+
+    // Varaiants -> Spacing/Padding
+    &--m-sm { margin: 10px; }
+    &--p-sm { padding: 10px; }
+  }
+
+  .o-icon--inline {
+    @include o-icon--inline;
+  }
+
+  .o-icon--inline-120 {
+    @include o-icon--inline-120;
+  }
+}

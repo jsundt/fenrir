@@ -1,0 +1,17 @@
+// scss-lint:disable ImportantRule SpaceAfterPropertyColon
+
+
+//-----------------------------------\\
+// Generate default size classes
+//-----------------------------------\\
+
+@mixin gen-size-utilities($name, $length) {
+
+  .u-size--y-#{$name} { height: $length; }
+  .u-size--x-#{$name} { width: $length; }
+  .u-size--#{$name} {
+    height: $length;
+    width: $length;
+  }
+
+}

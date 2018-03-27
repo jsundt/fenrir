@@ -1,0 +1,36 @@
+
+
+
+//-----------------------------------\\
+// SCSS helper functions
+//-----------------------------------\\
+
+@function component-size($key) {
+  @if map-has-key($component-sizes, $key) {
+    $get-key: map-get($component-sizes, $key);
+    @return nth($get-key, $nth);
+  }
+
+  @warn "Unknown `#{$key}` in $component-sizes.";
+  @return null;
+}
+
+// Use white-space map for spacing
+@function spacing($key) {
+  @if map-has-key($white-space, $key) {
+    @return map-get($white-space, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $white-space.";
+  @return null;
+}
+
+// Use z-index map for z-indexes
+@function z($key) {
+  @if map-has-key($z-layers, $key) {
+    @return map-get($z-layers, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-layers.";
+  @return null;
+}

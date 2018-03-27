@@ -1,0 +1,17 @@
+
+
+
+//-----------------------------------\\
+// Object: Tooltips
+//-----------------------------------\\
+
+@if $generate-object-tooltips {
+  .o-tooltip {
+    @include o-tooltip;
+    &--top { @include o-tooltip--top; }
+
+    //tooltip activators, apply to element that activates tooltip on hover
+    .o-tooltip__activator:hover & { @include o-tooltip--hover; }
+    .o-tooltip__activator.is-active & { display: none; }
+  }
+}

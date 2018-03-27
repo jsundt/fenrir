@@ -124,3 +124,30 @@
     background-color: color('black', A5);
   }
 }
+
+
+
+//----------------------------------------------\\
+// Charlie input wrapper
+//----------------------------------------------\\
+
+@mixin w-input() {
+  position: relative;
+  width: 100%;
+  border-radius: $br;
+  margin: 15px 0;
+  border: 1px solid transparent;
+  border-top-width: 3px;
+
+  background-color: color('white');
+  color: color('charcoal');
+  border-color: color('coolgray');
+
+  transition: background-color 0.2s,
+              color 0.2s,
+              border-color 0.2s;
+
+  &:hover {
+    border-color: color('gray');
+  }
+}

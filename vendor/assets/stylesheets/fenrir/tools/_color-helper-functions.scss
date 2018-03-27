@@ -1,0 +1,22 @@
+
+
+
+//-----------------------------------\\
+// Use map of colours in your scss files
+//-----------------------------------\\
+
+@function color($color, $strength: 100) {
+  @if map-has-key($color-map, $color) {
+    $get-color: map-get($color-map, $color);
+
+    @if map-has-key($get-color, $strength) {
+      @return map-get($get-color, $strength);
+    }
+
+    @warn "Unknown `#{$strength}` in `#{$color}`.";
+    @return null;
+  }
+
+  @warn "Unknown `#{$color}` in $color-map.";
+  @return null;
+}

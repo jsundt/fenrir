@@ -1,0 +1,14 @@
+// scss-lint:disable ImportantRule SpaceAfterPropertyColon
+
+
+//-----------------------------------\\
+// Useful size classes
+//-----------------------------------\\
+
+@if $enable-size-utilities {
+
+  @each $name, $length in $component-sizes {
+    @include gen-size-utilities($name, $length);
+  }
+
+}
