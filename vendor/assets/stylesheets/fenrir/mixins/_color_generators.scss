@@ -16,12 +16,12 @@
       $value: append($value, $border-fallback, 'comma');
     };
 
-    background: nth($value, 1);
+    background-color: nth($value, 1);
     color: nth($value, 2);
     border-color: nth($value, 3);
   } @else {
     @warn 'Using deprecated variable definition. $background-colors should have values of lists (background-color, color, border-color)';
-    background: $value;
+    background-color: $value;
   }
 }
 
@@ -112,7 +112,7 @@
           border-color: nth($colour-value, 3);
         } @else {
           @warn 'Using deprecated variable definition. $background-colors should have values of lists (background color, text color, border-color)';
-          background: $colour-value;
+          background-color: $colour-value;
         }
       }
     }
